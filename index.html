@@ -7,7 +7,7 @@
     <meta name="description" content="Aaron Edwards is the Founder and CEO of The Charles Group, a Cannes Lions-winning, five-time Inc. 5000 creative agency serving Fortune 50 brands.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -220,8 +220,10 @@
 
         .logo-item {
             flex-shrink: 0;
-            height: 40px;
-            opacity: 0.7;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            opacity: 0.6;
         }
 
         .logo-item img {
@@ -229,6 +231,42 @@
             width: auto;
             display: block;
             filter: brightness(0);
+        }
+
+        .logo-text {
+            font-size: 22px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #000;
+            white-space: nowrap;
+            font-weight: 400;
+        }
+
+        .logo-text.serif {
+            font-family: 'Cormorant Garamond', 'Georgia', serif;
+            letter-spacing: 6px;
+            font-size: 24px;
+        }
+
+        .logo-text.sans {
+            font-family: 'Inter', 'Helvetica Neue', sans-serif;
+            font-weight: 600;
+        }
+
+        .logo-text.light {
+            font-weight: 300;
+        }
+
+        .logo-text.bold {
+            font-weight: 700;
+        }
+
+        .logo-text.sm {
+            font-size: 18px;
+        }
+
+        .logo-text.lg {
+            font-size: 28px;
         }
 
         /* ── Expertise ───────────────────────────── */
@@ -624,7 +662,7 @@
     <header class="hero">
         <div class="hero-label">Founder & CEO — The Charles Group</div>
         <h1>Over a decade bringing <strong>intelligence and outstanding creativity</strong> to the world's most prestigious brands</h1>
-        <p class="hero-sub">Founder & CEO of The Charles Group, the luxury creative agency trusted by Cartier, HP, St. Regis, Bloomberg, and the Fortune 50.</p>
+        <p class="hero-sub">Founder & CEO of The Charles Group, the creative agency trusted by Cartier, HP, Omega, St. Regis, IBM, and the Fortune 50.</p>
         <div class="hero-tagline">Strategist · Speaker · Investor</div>
     </header>
 
@@ -633,39 +671,39 @@
         <div class="clients-label">Trusted by industry leaders</div>
         <div class="logo-strip-wrapper">
             <div class="logo-strip">
-                <span class="logo-item"><img src="logos/cartier.svg" alt="Cartier"></span>
-                <span class="logo-item"><img src="logos/hp.svg" alt="HP"></span>
-                <span class="logo-item"><img src="logos/stregis.svg" alt="St. Regis"></span>
-                <span class="logo-item"><img src="logos/bloomberg.svg" alt="Bloomberg"></span>
-                <span class="logo-item"><img src="logos/bcg.svg" alt="Boston Consulting Group"></span>
-                <span class="logo-item"><img src="logos/bnymellon.svg" alt="BNY Mellon"></span>
-                <span class="logo-item"><img src="logos/aveda.svg" alt="Aveda"></span>
-                <span class="logo-item"><img src="logos/birkenstock.svg" alt="Birkenstock"></span>
-                <span class="logo-item"><img src="logos/mackage.svg" alt="Mackage"></span>
-                <span class="logo-item"><img src="logos/bessemer.svg" alt="Bessemer Trust"></span>
-                <span class="logo-item"><img src="logos/corcoran.svg" alt="Corcoran"></span>
-                <span class="logo-item"><img src="logos/origins.svg" alt="Origins"></span>
-                <span class="logo-item"><img src="logos/rocnation.svg" alt="Roc Nation"></span>
-                <span class="logo-item"><img src="logos/diageo.svg" alt="Diageo"></span>
-                <span class="logo-item"><img src="logos/russell.svg" alt="Russell Athletic"></span>
-                <span class="logo-item"><img src="logos/marriott.svg" alt="Marriott Bonvoy"></span>
+                <span class="logo-item"><span class="logo-text serif lg">CARTIER</span></span>
+                <span class="logo-item"><img src="logos/hp.png" alt="HP"></span>
+                <span class="logo-item"><span class="logo-text serif">ST. REGIS</span></span>
+                <span class="logo-item"><img src="logos/bloomberg.png" alt="Bloomberg"></span>
+                <span class="logo-item"><span class="logo-text sans bold">BCG</span></span>
+                <span class="logo-item"><span class="logo-text sans light">BNY MELLON</span></span>
+                <span class="logo-item"><span class="logo-text serif">AVEDA</span></span>
+                <span class="logo-item"><span class="logo-text sans sm" style="letter-spacing:5px">BIRKENSTOCK</span></span>
+                <span class="logo-item"><span class="logo-text sans light" style="letter-spacing:8px">MACKAGE</span></span>
+                <span class="logo-item"><span class="logo-text serif sm">BESSEMER TRUST</span></span>
+                <span class="logo-item"><span class="logo-text serif" style="text-transform:lowercase;font-style:italic">corcoran</span></span>
+                <span class="logo-item"><span class="logo-text serif">OMEGA</span></span>
+                <span class="logo-item"><img src="logos/ibm.png" alt="IBM"></span>
+                <span class="logo-item"><span class="logo-text serif sm">ESTÉE LAUDER</span></span>
+                <span class="logo-item"><span class="logo-text serif sm">MARRIOTT BONVOY</span></span>
+                <span class="logo-item"><span class="logo-text serif">ORIGINS</span></span>
                 <!-- duplicate for seamless loop -->
-                <span class="logo-item"><img src="logos/cartier.svg" alt="Cartier"></span>
-                <span class="logo-item"><img src="logos/hp.svg" alt="HP"></span>
-                <span class="logo-item"><img src="logos/stregis.svg" alt="St. Regis"></span>
-                <span class="logo-item"><img src="logos/bloomberg.svg" alt="Bloomberg"></span>
-                <span class="logo-item"><img src="logos/bcg.svg" alt="Boston Consulting Group"></span>
-                <span class="logo-item"><img src="logos/bnymellon.svg" alt="BNY Mellon"></span>
-                <span class="logo-item"><img src="logos/aveda.svg" alt="Aveda"></span>
-                <span class="logo-item"><img src="logos/birkenstock.svg" alt="Birkenstock"></span>
-                <span class="logo-item"><img src="logos/mackage.svg" alt="Mackage"></span>
-                <span class="logo-item"><img src="logos/bessemer.svg" alt="Bessemer Trust"></span>
-                <span class="logo-item"><img src="logos/corcoran.svg" alt="Corcoran"></span>
-                <span class="logo-item"><img src="logos/origins.svg" alt="Origins"></span>
-                <span class="logo-item"><img src="logos/rocnation.svg" alt="Roc Nation"></span>
-                <span class="logo-item"><img src="logos/diageo.svg" alt="Diageo"></span>
-                <span class="logo-item"><img src="logos/russell.svg" alt="Russell Athletic"></span>
-                <span class="logo-item"><img src="logos/marriott.svg" alt="Marriott Bonvoy"></span>
+                <span class="logo-item"><span class="logo-text serif lg">CARTIER</span></span>
+                <span class="logo-item"><img src="logos/hp.png" alt="HP"></span>
+                <span class="logo-item"><span class="logo-text serif">ST. REGIS</span></span>
+                <span class="logo-item"><img src="logos/bloomberg.png" alt="Bloomberg"></span>
+                <span class="logo-item"><span class="logo-text sans bold">BCG</span></span>
+                <span class="logo-item"><span class="logo-text sans light">BNY MELLON</span></span>
+                <span class="logo-item"><span class="logo-text serif">AVEDA</span></span>
+                <span class="logo-item"><span class="logo-text sans sm" style="letter-spacing:5px">BIRKENSTOCK</span></span>
+                <span class="logo-item"><span class="logo-text sans light" style="letter-spacing:8px">MACKAGE</span></span>
+                <span class="logo-item"><span class="logo-text serif sm">BESSEMER TRUST</span></span>
+                <span class="logo-item"><span class="logo-text serif" style="text-transform:lowercase;font-style:italic">corcoran</span></span>
+                <span class="logo-item"><span class="logo-text serif">OMEGA</span></span>
+                <span class="logo-item"><img src="logos/ibm.png" alt="IBM"></span>
+                <span class="logo-item"><span class="logo-text serif sm">ESTÉE LAUDER</span></span>
+                <span class="logo-item"><span class="logo-text serif sm">MARRIOTT BONVOY</span></span>
+                <span class="logo-item"><span class="logo-text serif">ORIGINS</span></span>
             </div>
         </div>
     </div>
