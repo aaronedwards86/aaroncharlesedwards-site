@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aaron Edwards — Founder & CEO, The Charles Group</title>
+    <meta name="description" content="Aaron Edwards is the Founder and CEO of The Charles Group, a Cannes Lions-winning, five-time Inc. 5000 creative agency serving Fortune 50 brands.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #08080c;
+            --bg-elevated: #111118;
+            --bg-card: #16161f;
+            --text: #f0f0f2;
+            --text-secondary: #9a9ab0;
+            --text-tertiary: #5a5a72;
+            --accent: #c8a96e;
+            --accent-dim: rgba(200, 169, 110, 0.15);
+            --border: rgba(255, 255, 255, 0.06);
+            --max-width: 1200px;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Navigation ─────────────────────────── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(8, 8, 12, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .nav-name {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--text); }
+
+        .nav-cta {
+            background: var(--accent) !important;
+            color: var(--bg) !important;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-weight: 500 !important;
+            transition: opacity 0.3s !important;
+        }
+
+        .nav-cta:hover { opacity: 0.85; }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* ── Hero ────────────────────────────────── */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 160px 40px 120px;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .hero-label {
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 32px;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 7vw, 80px);
+            font-weight: 300;
+            line-height: 1.1;
+            margin-bottom: 32px;
+            max-width: 900px;
+        }
+
+        .hero h1 strong {
+            font-weight: 600;
+        }
+
+        .hero-sub {
+            font-size: 20px;
+            color: var(--text-secondary);
+            max-width: 640px;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .hero-tagline {
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-tertiary);
+        }
+
+        /* ── Sections ────────────────────────────── */
+        section {
+            padding: 120px 40px;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 48px;
+        }
+
+        .section-divider {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 0 40px;
+            max-width: calc(var(--max-width) - 80px);
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ── Client Logos ────────────────────────── */
+        .clients {
+            padding: 80px 40px;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .clients-label {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-tertiary);
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .logo-strip {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 56px;
+            flex-wrap: wrap;
+        }
+
+        .logo-item {
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-tertiary);
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+
+        .logo-item:hover { opacity: 1; }
+
+        /* ── Expertise ───────────────────────────── */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+
+        .expertise-card {
+            padding: 48px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            transition: border-color 0.3s;
+        }
+
+        .expertise-card:hover {
+            border-color: rgba(200, 169, 110, 0.3);
+        }
+
+        .expertise-card h3 {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+
+        .expertise-card p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .brandformance-tag {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 4px 12px;
+            border-radius: 3px;
+            margin-top: 20px;
+        }
+
+        /* ── About ───────────────────────────────── */
+        .about-content {
+            max-width: 720px;
+        }
+
+        .about-content p {
+            font-size: 18px;
+            line-height: 1.9;
+            color: var(--text-secondary);
+            margin-bottom: 28px;
+        }
+
+        .about-content p:first-of-type {
+            font-size: 22px;
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        /* ── Speaking ────────────────────────────── */
+        .speaking-topics {
+            display: grid;
+            gap: 24px;
+            margin-bottom: 64px;
+        }
+
+        .topic-card {
+            padding: 40px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 32px;
+            align-items: start;
+            transition: border-color 0.3s;
+        }
+
+        .topic-card:hover {
+            border-color: rgba(200, 169, 110, 0.3);
+        }
+
+        .topic-number {
+            font-size: 48px;
+            font-weight: 200;
+            color: var(--accent);
+            line-height: 1;
+        }
+
+        .topic-card h3 {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .topic-card p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .speaking-creds {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+        }
+
+        .cred-item {
+            padding: 24px 32px;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+        }
+
+        .cred-item .cred-org {
+            font-size: 15px;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .cred-item .cred-role {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+
+        /* ── Video Embed ─────────────────────────── */
+        .video-section {
+            margin-top: 64px;
+            padding: 40px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+
+        .video-section h3 {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .video-section .video-meta {
+            font-size: 14px;
+            color: var(--text-tertiary);
+            margin-bottom: 24px;
+        }
+
+        .video-placeholder {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 60px;
+            text-align: center;
+            color: var(--text-tertiary);
+        }
+
+        .video-placeholder a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* ── Awards ──────────────────────────────── */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+        }
+
+        .award-item {
+            text-align: center;
+            padding: 40px 24px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+
+        .award-name {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .award-detail {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+
+        /* ── Contact ─────────────────────────────── */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+        }
+
+        .contact-info h3 {
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 24px;
+        }
+
+        .contact-info p {
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .contact-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 15px;
+            margin-right: 32px;
+            transition: opacity 0.3s;
+        }
+
+        .contact-links a:hover { opacity: 0.7; }
+
+        .contact-form { display: flex; flex-direction: column; gap: 20px; }
+
+        .form-group { display: flex; flex-direction: column; gap: 8px; }
+
+        .form-group label {
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-tertiary);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 14px 16px;
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            transition: border-color 0.3s;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--accent);
+        }
+
+        .form-group textarea { resize: vertical; min-height: 120px; }
+
+        .form-group select { cursor: pointer; }
+
+        .form-submit {
+            background: var(--accent);
+            color: var(--bg);
+            border: none;
+            padding: 16px 40px;
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: opacity 0.3s;
+            align-self: flex-start;
+        }
+
+        .form-submit:hover { opacity: 0.85; }
+
+        /* ── Footer ──────────────────────────────── */
+        footer {
+            padding: 60px 40px;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-left {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            color: var(--text-tertiary);
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover { color: var(--text); }
+
+        /* ── Animations ──────────────────────────── */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── Mobile ──────────────────────────────── */
+        @media (max-width: 768px) {
+            nav { padding: 16px 24px; }
+
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background: var(--bg);
+                flex-direction: column;
+                padding: 32px 24px;
+                gap: 24px;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.open { display: flex; }
+            .nav-toggle { display: block; }
+
+            .hero { padding: 120px 24px 80px; }
+            section { padding: 80px 24px; }
+            .clients { padding: 60px 24px; }
+            .section-divider { margin: 0 24px; }
+
+            .expertise-grid { grid-template-columns: 1fr; }
+            .expertise-card { padding: 32px; }
+
+            .topic-card {
+                grid-template-columns: 1fr;
+                gap: 16px;
+                padding: 32px;
+            }
+
+            .topic-number { font-size: 36px; }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .logo-strip { gap: 32px; }
+            .logo-item { font-size: 12px; letter-spacing: 2px; }
+
+            .awards-grid { grid-template-columns: 1fr 1fr; }
+
+            footer {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+                padding: 40px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-name">Aaron Edwards</div>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+            <li><a href="#expertise">Expertise</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#speaking">Speaking</a></li>
+            <li><a href="#recognition">Recognition</a></li>
+            <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero">
+        <div class="hero-label">Founder & CEO — The Charles Group</div>
+        <h1>Building luxury brand experiences for the world's most <strong>prestigious companies</strong></h1>
+        <p class="hero-sub">Over a decade leading creative strategy for Fortune 50 brands — fusing analytical rigor, financial modeling, and performance accountability to solve for the business challenge, not just the marketing challenge.</p>
+        <div class="hero-tagline">Speaker · Investor · Strategist</div>
+    </header>
+
+    <!-- Client Logos -->
+    <div class="clients fade-in">
+        <div class="clients-label">Trusted by industry leaders</div>
+        <div class="logo-strip">
+            <span class="logo-item">Cartier</span>
+            <span class="logo-item">HP</span>
+            <span class="logo-item">Diageo</span>
+            <span class="logo-item">BCG</span>
+            <span class="logo-item">BNY Mellon</span>
+            <span class="logo-item">Roc Nation</span>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- Domain Expertise -->
+    <section id="expertise" class="fade-in">
+        <div class="section-label">Expertise</div>
+        <h2 class="section-title">Two disciplines. One lens.</h2>
+        <div class="expertise-grid">
+            <div class="expertise-card">
+                <h3>Luxury Marketing & Brand Strategy</h3>
+                <p>Over a decade leading creative strategy for Fortune 50 luxury brands, with deep expertise in how prestige brands build, protect, and extend cultural relevance. From Cartier to Birkenstock, HP to Roc Nation — the work spans brand positioning, content strategy, digital transformation, and performance marketing.</p>
+                <div class="brandformance-tag">Brandformance™</div>
+            </div>
+            <div class="expertise-card">
+                <h3>Finance & Investment</h3>
+                <p>An LP in First Close, a fund of funds, with active positions across equities, real assets, and international real estate. Trained in finance before founding TCG — a background that brings financial modeling, forecasting, and business-case discipline to every engagement. Marketing isn't a cost center. It's a growth engine.</p>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- About -->
+    <section id="about" class="fade-in">
+        <div class="section-label">About</div>
+        <h2 class="section-title">The story</h2>
+        <div class="about-content">
+            <p>Aaron Edwards founded The Charles Group over a decade ago with a simple thesis: the best creative work comes from agencies that think like businesses, not just studios.</p>
+            <p>That conviction built a firm that now serves Fortune 50 clients across luxury, lifestyle, and financial services — Cartier, HP, Diageo, Boston Consulting Group, Roc Nation — from offices in New York, Chicago, and London. A five-time Inc. 5000 honoree, the work has earned a Cannes Lion, D&AD Pencils, Webby Awards, and a reputation for creative excellence that moves numbers.</p>
+            <p>Before building The Charles Group, Aaron studied and worked in finance — a background that still shapes every engagement. Where most agencies lead with creative, Aaron leads with analytical rigor: financial modeling, forecasting, and business-case development that turns marketing from a cost center into a growth engine. He coined the term "Brandformance™" to describe this philosophy — fusing brand strategy with performance accountability to solve for the business challenge, not just the marketing challenge.</p>
+            <p>He is based in New York.</p>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- Speaking -->
+    <section id="speaking" class="fade-in">
+        <div class="section-label">Speaking</div>
+        <h2 class="section-title">Keynotes, panels & guest lectures</h2>
+        <p style="color: var(--text-secondary); max-width: 640px; margin-bottom: 48px; font-size: 17px; line-height: 1.8;">Aaron Edwards is available for keynotes, executive workshops, panels, and guest lectures on luxury brand strategy, the business of creativity, and the intersection of marketing and finance.</p>
+
+        <div class="speaking-topics">
+            <div class="topic-card">
+                <div class="topic-number">01</div>
+                <div>
+                    <h3>Brandformance™: Solving the Business Challenge, Not Just the Marketing Challenge</h3>
+                    <p>Why the divide between brand and performance marketing is a false choice — and how a consultative approach built on financial modeling, forecasting, and analytical rigor is winning Fortune 50 budgets.</p>
+                </div>
+            </div>
+            <div class="topic-card">
+                <div class="topic-number">02</div>
+                <div>
+                    <h3>The Financial Architecture of Creative Excellence</h3>
+                    <p>Great creative needs a financial foundation. How we use modeling, forecasting, and business-case discipline to create the conditions where exceptional work happens — and delivers measurable outcomes.</p>
+                </div>
+            </div>
+            <div class="topic-card">
+                <div class="topic-number">03</div>
+                <div>
+                    <h3>Luxury in the Age of Noise</h3>
+                    <p>How prestige brands maintain cultural relevance without chasing trends. A framework for brand leaders navigating the tension between accessibility and exclusivity, drawn from real campaigns for Fortune 50 luxury clients.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="speaking-creds">
+            <div class="cred-item">
+                <div class="cred-org">Columbia Business School</div>
+                <div class="cred-role">Guest Lecturer, MBA Marketing Strategy</div>
+            </div>
+            <div class="cred-item">
+                <div class="cred-org">NYU</div>
+                <div class="cred-role">Guest Lecturer</div>
+            </div>
+            <div class="cred-item">
+                <div class="cred-org">NY1 Spectrum News</div>
+                <div class="cred-role">On-Air Commentator, Super Bowl LX</div>
+            </div>
+        </div>
+
+        <!-- NY1 Video -->
+        <div class="video-section">
+            <h3>Super Bowl LX — Advertising Analysis</h3>
+            <div class="video-meta">NY1 Spectrum News · February 2026</div>
+            <div class="video-placeholder">
+                <p>▶ <a href="https://ny1.com/nyc/all-boroughs/CTV/2026/02/09/advertisers-pull-out-all-the-stops-for-super-bowl-lx" target="_blank">Watch the full segment on NY1</a></p>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- Recognition -->
+    <section id="recognition" class="fade-in">
+        <div class="section-label">Recognition</div>
+        <h2 class="section-title">Awards & press</h2>
+        <div class="awards-grid">
+            <div class="award-item">
+                <div class="award-name">Cannes Lions</div>
+                <div class="award-detail">International Festival of Creativity</div>
+            </div>
+            <div class="award-item">
+                <div class="award-name">Inc. 5000</div>
+                <div class="award-detail">5x Consecutive Honoree</div>
+            </div>
+            <div class="award-item">
+                <div class="award-name">D&AD</div>
+                <div class="award-detail">2x Pencils — WSJ × Netflix</div>
+            </div>
+            <div class="award-item">
+                <div class="award-name">Webby Awards</div>
+                <div class="award-detail">Best Branded Editorial Experience</div>
+            </div>
+            <div class="award-item">
+                <div class="award-name">Creative Review</div>
+                <div class="award-detail">Annual Selection</div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- Contact -->
+    <section id="contact" class="fade-in">
+        <div class="section-label">Contact</div>
+        <h2 class="section-title">Let's talk</h2>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Speaking inquiries, press, and business.</h3>
+                <p>For keynote bookings, media requests, or professional inquiries — reach out directly.</p>
+                <div class="contact-links">
+                    <a href="https://www.linkedin.com/in/aaroncedwards/" target="_blank">LinkedIn ↗</a>
+                    <a href="mailto:aaron@thecharlesnyc.com">Email ↗</a>
+                </div>
+            </div>
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent. Thank you.');">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Subject</label>
+                    <select required>
+                        <option value="" disabled selected>Select a topic</option>
+                        <option value="speaking">Speaking Inquiry</option>
+                        <option value="press">Press</option>
+                        <option value="business">Business</option>
+                        <option value="general">General</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea placeholder="How can I help?" required></textarea>
+                </div>
+                <button type="submit" class="form-submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-left">© 2026 Aaron Edwards. All rights reserved.</div>
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/aaroncedwards/" target="_blank">LinkedIn</a>
+            <a href="https://thecharlesnyc.com" target="_blank">The Charles Group</a>
+        </div>
+    </footer>
+
+    <!-- Scroll Animation -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Close mobile nav on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('open');
+            });
+        });
+    </script>
+
+</body>
+</html>
