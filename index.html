@@ -99,7 +99,32 @@
         }
 
         /* ── Hero ────────────────────────────────── */
+        .hero-wrapper {
+            position: relative;
+            min-height: 90vh;
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.12;
+            filter: saturate(0.3);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.9) 70%, rgba(255,255,255,1) 100%);
+        }
+
         .hero {
+            position: relative;
+            z-index: 2;
             min-height: 90vh;
             display: flex;
             flex-direction: column;
@@ -107,6 +132,15 @@
             padding: 140px 40px 80px;
             max-width: var(--max-width);
             margin: 0 auto;
+        }
+
+        .hero-name {
+            font-size: clamp(56px, 8vw, 96px);
+            font-weight: 700;
+            letter-spacing: -1px;
+            line-height: 1;
+            margin-bottom: 32px;
+            color: var(--text);
         }
 
         .hero-label {
@@ -119,15 +153,23 @@
         }
 
         .hero h1 {
-            font-size: clamp(48px, 7vw, 80px);
+            font-size: clamp(28px, 4vw, 42px);
             font-weight: 300;
-            line-height: 1.1;
+            line-height: 1.4;
             margin-bottom: 32px;
-            max-width: 900px;
+            max-width: 700px;
+            color: var(--text-secondary);
         }
 
         .hero h1 strong {
-            font-weight: 600;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .hero-credential {
+            font-size: 15px;
+            color: var(--text-tertiary);
+            margin-bottom: 12px;
         }
 
         .hero-sub {
@@ -143,6 +185,12 @@
             letter-spacing: 3px;
             text-transform: uppercase;
             color: var(--text-tertiary);
+        }
+
+        .hero-personal {
+            color: var(--text-tertiary);
+            font-size: 15px;
+            margin-top: 40px;
         }
 
         /* ── Sections ────────────────────────────── */
@@ -750,6 +798,7 @@
             .nav-toggle { display: block; }
 
             .hero { padding: 100px 24px 60px; }
+            .hero-name { font-size: 48px; }
             section { padding: 64px 24px; }
             .clients { padding: 40px 24px; }
             .section-divider { margin: 0 24px; }
@@ -810,13 +859,18 @@
     </nav>
 
     <!-- Hero -->
-    <header class="hero">
-        <div class="hero-label">Founder & CEO | The Charles Group</div>
-        <h1>Intelligence and <strong>outstanding creativity</strong> applied to everything we do.</h1>
-        <p class="hero-sub">Founder & CEO of The Charles Group, the creative agency trusted by Cartier, HP, Omega, St. Regis, IBM, and the Fortune 50.</p>
-        <div class="hero-tagline">Founder · Speaker · Investor</div>
-        <p style="color: var(--text-tertiary); font-size: 15px; margin-top: 40px; max-width: 560px;">Family man. Car enthusiast. World traveler. Sports fanatic.</p>
-    </header>
+    <div class="hero-wrapper">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="hero-water3.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <header class="hero">
+            <div class="hero-name">Aaron Edwards</div>
+            <h1>The mind behind <strong>Cartier, HP, Omega, St. Regis,</strong> and <strong>IBM's</strong> most ambitious creative work.</h1>
+            <div class="hero-credential">Founder & CEO, The Charles Group</div>
+            <div class="hero-personal">Family man. Car enthusiast. World traveler. Sports fanatic.</div>
+        </header>
+    </div>
 
     <!-- Client Logos -->
     <div class="clients">
