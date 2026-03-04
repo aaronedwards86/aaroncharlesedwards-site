@@ -100,11 +100,11 @@
 
         /* ── Hero ────────────────────────────────── */
         .hero {
-            min-height: 100vh;
+            min-height: 90vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 160px 40px 120px;
+            padding: 140px 40px 80px;
             max-width: var(--max-width);
             margin: 0 auto;
         }
@@ -147,7 +147,7 @@
 
         /* ── Sections ────────────────────────────── */
         section {
-            padding: 120px 40px;
+            padding: 96px 40px;
             max-width: var(--max-width);
             margin: 0 auto;
         }
@@ -179,7 +179,7 @@
 
         /* ── Client Logos ────────────────────────── */
         .clients {
-            padding: 80px 40px;
+            padding: 60px 40px;
             max-width: var(--max-width);
             margin: 0 auto;
         }
@@ -194,25 +194,40 @@
             margin-bottom: 48px;
         }
 
+        .logo-strip-wrapper {
+            overflow: hidden;
+            position: relative;
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+
         .logo-strip {
             display: flex;
-            justify-content: center;
             align-items: center;
-            gap: 56px;
-            flex-wrap: wrap;
+            gap: 64px;
+            animation: scroll-logos 30s linear infinite;
+            width: max-content;
+        }
+
+        .logo-strip:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll-logos {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
 
         .logo-item {
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 500;
             letter-spacing: 3px;
             text-transform: uppercase;
             color: var(--text-tertiary);
-            opacity: 0.6;
-            transition: opacity 0.3s;
+            opacity: 0.5;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
-
-        .logo-item:hover { opacity: 1; }
 
         /* ── Expertise ───────────────────────────── */
         .expertise-grid {
@@ -553,9 +568,9 @@
             .nav-links.open { display: flex; }
             .nav-toggle { display: block; }
 
-            .hero { padding: 120px 24px 80px; }
-            section { padding: 80px 24px; }
-            .clients { padding: 60px 24px; }
+            .hero { padding: 100px 24px 60px; }
+            section { padding: 64px 24px; }
+            .clients { padding: 40px 24px; }
             .section-divider { margin: 0 24px; }
 
             .expertise-grid { grid-template-columns: 1fr; }
@@ -612,15 +627,44 @@
     </header>
 
     <!-- Client Logos -->
-    <div class="clients fade-in">
+    <div class="clients">
         <div class="clients-label">Trusted by industry leaders</div>
-        <div class="logo-strip">
-            <span class="logo-item">Cartier</span>
-            <span class="logo-item">HP</span>
-            <span class="logo-item">St. Regis</span>
-            <span class="logo-item">Bloomberg</span>
-            <span class="logo-item">BCG</span>
-            <span class="logo-item">BNY Mellon</span>
+        <div class="logo-strip-wrapper">
+            <div class="logo-strip">
+                <span class="logo-item">Cartier</span>
+                <span class="logo-item">HP</span>
+                <span class="logo-item">St. Regis</span>
+                <span class="logo-item">Bloomberg</span>
+                <span class="logo-item">BCG</span>
+                <span class="logo-item">BNY Mellon</span>
+                <span class="logo-item">Aveda</span>
+                <span class="logo-item">Birkenstock</span>
+                <span class="logo-item">Mackage</span>
+                <span class="logo-item">Bessemer Trust</span>
+                <span class="logo-item">Corcoran</span>
+                <span class="logo-item">Origins</span>
+                <span class="logo-item">Roc Nation</span>
+                <span class="logo-item">Diageo</span>
+                <span class="logo-item">Russell Athletic</span>
+                <span class="logo-item">Marriott Bonvoy</span>
+                <!-- duplicate for seamless loop -->
+                <span class="logo-item">Cartier</span>
+                <span class="logo-item">HP</span>
+                <span class="logo-item">St. Regis</span>
+                <span class="logo-item">Bloomberg</span>
+                <span class="logo-item">BCG</span>
+                <span class="logo-item">BNY Mellon</span>
+                <span class="logo-item">Aveda</span>
+                <span class="logo-item">Birkenstock</span>
+                <span class="logo-item">Mackage</span>
+                <span class="logo-item">Bessemer Trust</span>
+                <span class="logo-item">Corcoran</span>
+                <span class="logo-item">Origins</span>
+                <span class="logo-item">Roc Nation</span>
+                <span class="logo-item">Diageo</span>
+                <span class="logo-item">Russell Athletic</span>
+                <span class="logo-item">Marriott Bonvoy</span>
+            </div>
         </div>
     </div>
 
