@@ -468,6 +468,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 32px;
+            justify-content: center;
         }
 
         .cred-item {
@@ -475,6 +476,7 @@
             background: var(--bg-elevated);
             border: 1px solid var(--border);
             border-radius: 6px;
+            text-align: center;
         }
 
         .cred-item .cred-org {
@@ -525,33 +527,51 @@
         .speaking-photos {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 24px;
+            gap: 32px;
             margin-top: 48px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .speaking-photo-card {
             position: relative;
             border-radius: 12px;
             overflow: hidden;
+            text-align: center;
         }
 
         .speaking-photo-card img {
             width: 100%;
-            height: 280px;
+            height: 320px;
             object-fit: cover;
+            object-position: center top;
             display: block;
+            border-radius: 12px;
         }
 
-        .speaking-photo-card .photo-caption {
+        .photo-info {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
-            padding: 16px 20px;
-            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            padding: 24px 20px 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
             color: white;
-            font-size: 13px;
-            font-weight: 500;
+            text-align: left;
+        }
+
+        .photo-info .photo-org {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .photo-info .photo-role {
+            font-size: 12px;
+            font-weight: 400;
+            opacity: 0.8;
+            letter-spacing: 0.5px;
         }
 
         /* ── Awards ──────────────────────────────── */
@@ -946,11 +966,17 @@
         <div class="speaking-photos">
             <div class="speaking-photo-card">
                 <img src="columbia-speaking.jpg" alt="Aaron Edwards speaking at Columbia Business School">
-                <div class="photo-caption">Columbia Business School</div>
+                <div class="photo-info">
+                    <div class="photo-org">Columbia Business School</div>
+                    <div class="photo-role">Guest Lecturer, MBA Marketing Strategy</div>
+                </div>
             </div>
             <div class="speaking-photo-card">
                 <img src="nyu-speaking.jpg" alt="Aaron Edwards at NYU">
-                <div class="photo-caption">NYU</div>
+                <div class="photo-info">
+                    <div class="photo-org">NYU</div>
+                    <div class="photo-role">Guest Lecturer</div>
+                </div>
             </div>
         </div>
 
