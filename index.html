@@ -272,46 +272,126 @@
         /* ── Expertise ───────────────────────────── */
         .expertise-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 32px;
         }
 
         .expertise-card {
-            padding: 48px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            transition: border-color 0.3s;
+            position: relative;
+            padding: 40px 32px;
+            border-radius: 16px;
+            overflow: hidden;
+            min-height: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            text-decoration: none;
+            color: white;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
         }
 
         .expertise-card:hover {
-            border-color: rgba(0, 0, 0, 0.2);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .expertise-card .card-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .expertise-card .card-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+
+        .expertise-card .card-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .expertise-card .card-logo {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .expertise-card .card-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: 0.8;
+            margin-bottom: 12px;
         }
 
         .expertise-card h3 {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 500;
-            margin-bottom: 20px;
-            color: var(--text);
+            margin-bottom: 12px;
+            color: white;
         }
 
         .expertise-card p {
-            color: var(--text-secondary);
-            font-size: 16px;
-            line-height: 1.8;
+            color: rgba(255,255,255,0.85);
+            font-size: 14px;
+            line-height: 1.7;
         }
 
-        .brandformance-tag {
+        .expertise-card .card-arrow {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            z-index: 2;
+            font-size: 20px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .expertise-card:hover .card-arrow {
+            opacity: 1;
+        }
+
+        /* TCG Card */
+        .card-tcg .card-bg {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        }
+        .card-tcg .card-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 60%);
+        }
+
+        /* First Close Card */
+        .card-firstclose .card-bg {
+            background: linear-gradient(135deg, #2d3436 0%, #636e72 100%);
+        }
+        .card-firstclose .card-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 60%);
+        }
+
+        /* Beta Card */
+        .card-beta .card-bg {
+            background: linear-gradient(135deg, #0c0c0c 0%, #2d2d2d 50%, #1a1a1a 100%);
+        }
+        .card-beta .card-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 60%);
+        }
+
+        .beta-badge {
             display: inline-block;
-            font-size: 12px;
-            font-weight: 600;
+            font-size: 10px;
+            font-weight: 700;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: var(--text);
-            border: 1px solid var(--text);
-            padding: 4px 12px;
-            border-radius: 3px;
-            margin-top: 20px;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-left: 8px;
+            vertical-align: middle;
         }
 
         /* ── About ───────────────────────────────── */
@@ -614,7 +694,7 @@
             .section-divider { margin: 0 24px; }
 
             .expertise-grid { grid-template-columns: 1fr; }
-            .expertise-card { padding: 32px; }
+            .expertise-card { min-height: 260px; }
 
             .topic-card {
                 grid-template-columns: 1fr;
@@ -712,18 +792,38 @@
 
     <!-- Domain Expertise -->
     <section id="expertise" class="fade-in">
-        <div class="section-label">Expertise</div>
-        <h2 class="section-title">Two disciplines. One lens.</h2>
+        <div class="section-label">Ventures</div>
+        <h2 class="section-title">What I'm building.</h2>
         <div class="expertise-grid">
-            <div class="expertise-card">
-                <h3>Strategy & Creative Excellence</h3>
-                <p>Over a decade bringing intelligence and outstanding creativity to Fortune 50 brands. From Cartier to HP, St. Regis to Bloomberg — the work spans brand strategy, content, digital transformation, and performance marketing, always grounded in analytical rigor and business outcomes.</p>
-                <div class="brandformance-tag">Brandformance™</div>
-            </div>
-            <div class="expertise-card">
-                <h3>Finance & Investment</h3>
-                <p>An LP in First Close, a fund of funds, with active positions across equities, real assets, and international real estate. Trained in finance before founding TCG — a background that brings financial modeling, forecasting, and business-case discipline to every engagement. Marketing isn't a cost center. It's a growth engine.</p>
-            </div>
+            <a class="expertise-card card-tcg" href="https://thecharlesnyc.com" target="_blank">
+                <div class="card-bg"></div>
+                <div class="card-overlay"></div>
+                <span class="card-arrow">↗</span>
+                <div class="card-content">
+                    <div class="card-label">Creative Agency</div>
+                    <div class="card-logo">The Charles Group</div>
+                    <p>Strategy-first creative agency serving Fortune 50 brands. Cannes Lions-winning, five-time Inc. 5000 honoree. Offices in New York, Chicago, and London.</p>
+                </div>
+            </a>
+            <a class="expertise-card card-firstclose" href="#" target="_blank">
+                <div class="card-bg"></div>
+                <div class="card-overlay"></div>
+                <span class="card-arrow">↗</span>
+                <div class="card-content">
+                    <div class="card-label">Fund of Funds</div>
+                    <div class="card-logo">First Close</div>
+                    <p>Investing across emerging and established fund managers. LP positions spanning equities, real assets, and international real estate.</p>
+                </div>
+            </a>
+            <a class="expertise-card card-beta" href="#" target="_blank" onclick="event.preventDefault()">
+                <div class="card-bg"></div>
+                <div class="card-overlay"></div>
+                <div class="card-content">
+                    <div class="card-label">Coming Soon</div>
+                    <div class="card-logo">New Venture <span class="beta-badge">Beta</span></div>
+                    <p>Something new is in the works. Details coming soon.</p>
+                </div>
+            </a>
         </div>
     </section>
 
