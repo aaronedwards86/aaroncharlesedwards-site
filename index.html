@@ -234,18 +234,18 @@
         }
 
         .logo-text {
-            font-size: 22px;
+            font-size: 18px;
             letter-spacing: 4px;
             text-transform: uppercase;
             color: #000;
             white-space: nowrap;
             font-weight: 400;
+            line-height: 50px;
         }
 
         .logo-text.serif {
             font-family: 'Cormorant Garamond', 'Georgia', serif;
-            letter-spacing: 6px;
-            font-size: 24px;
+            letter-spacing: 5px;
         }
 
         .logo-text.sans {
@@ -261,14 +261,6 @@
             font-weight: 700;
         }
 
-        .logo-text.sm {
-            font-size: 18px;
-        }
-
-        .logo-text.lg {
-            font-size: 28px;
-        }
-
         /* ── Expertise ───────────────────────────── */
         .expertise-grid {
             display: grid;
@@ -281,7 +273,7 @@
             padding: 40px 32px;
             border-radius: 16px;
             overflow: hidden;
-            min-height: 320px;
+            height: 340px;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
@@ -340,6 +332,12 @@
             color: rgba(255,255,255,0.85);
             font-size: 14px;
             line-height: 1.7;
+            margin: 0;
+        }
+
+        .expertise-card .card-content {
+            display: flex;
+            flex-direction: column;
         }
 
         .expertise-card .card-arrow {
@@ -751,38 +749,38 @@
         <div class="clients-label">Trusted by industry leaders</div>
         <div class="logo-strip-wrapper">
             <div class="logo-strip">
-                <span class="logo-item"><span class="logo-text serif lg">CARTIER</span></span>
+                <span class="logo-item"><span class="logo-text serif">CARTIER</span></span>
                 <span class="logo-item"><img src="logos/hp.png" alt="HP"></span>
                 <span class="logo-item"><span class="logo-text serif">ST. REGIS</span></span>
                 <span class="logo-item"><img src="logos/bloomberg.png" alt="Bloomberg"></span>
                 <span class="logo-item"><span class="logo-text sans bold">BCG</span></span>
                 <span class="logo-item"><span class="logo-text sans light">BNY MELLON</span></span>
                 <span class="logo-item"><span class="logo-text serif">AVEDA</span></span>
-                <span class="logo-item"><span class="logo-text sans sm" style="letter-spacing:5px">BIRKENSTOCK</span></span>
-                <span class="logo-item"><span class="logo-text sans light" style="letter-spacing:8px">MACKAGE</span></span>
-                <span class="logo-item"><span class="logo-text serif sm">BESSEMER TRUST</span></span>
-                <span class="logo-item"><span class="logo-text serif" style="text-transform:lowercase;font-style:italic">corcoran</span></span>
+                <span class="logo-item"><span class="logo-text sans">BIRKENSTOCK</span></span>
+                <span class="logo-item"><span class="logo-text sans light">MACKAGE</span></span>
+                <span class="logo-item"><span class="logo-text serif">BESSEMER TRUST</span></span>
+                <span class="logo-item"><span class="logo-text serif">CORCORAN</span></span>
                 <span class="logo-item"><span class="logo-text serif">OMEGA</span></span>
                 <span class="logo-item"><img src="logos/ibm.png" alt="IBM"></span>
-                <span class="logo-item"><span class="logo-text serif sm">ESTÉE LAUDER</span></span>
-                <span class="logo-item"><span class="logo-text serif sm">MARRIOTT BONVOY</span></span>
+                <span class="logo-item"><span class="logo-text serif">ESTÉE LAUDER</span></span>
+                <span class="logo-item"><span class="logo-text serif">MARRIOTT BONVOY</span></span>
                 <span class="logo-item"><span class="logo-text serif">ORIGINS</span></span>
                 <!-- duplicate for seamless loop -->
-                <span class="logo-item"><span class="logo-text serif lg">CARTIER</span></span>
+                <span class="logo-item"><span class="logo-text serif">CARTIER</span></span>
                 <span class="logo-item"><img src="logos/hp.png" alt="HP"></span>
                 <span class="logo-item"><span class="logo-text serif">ST. REGIS</span></span>
                 <span class="logo-item"><img src="logos/bloomberg.png" alt="Bloomberg"></span>
                 <span class="logo-item"><span class="logo-text sans bold">BCG</span></span>
                 <span class="logo-item"><span class="logo-text sans light">BNY MELLON</span></span>
                 <span class="logo-item"><span class="logo-text serif">AVEDA</span></span>
-                <span class="logo-item"><span class="logo-text sans sm" style="letter-spacing:5px">BIRKENSTOCK</span></span>
-                <span class="logo-item"><span class="logo-text sans light" style="letter-spacing:8px">MACKAGE</span></span>
-                <span class="logo-item"><span class="logo-text serif sm">BESSEMER TRUST</span></span>
-                <span class="logo-item"><span class="logo-text serif" style="text-transform:lowercase;font-style:italic">corcoran</span></span>
+                <span class="logo-item"><span class="logo-text sans">BIRKENSTOCK</span></span>
+                <span class="logo-item"><span class="logo-text sans light">MACKAGE</span></span>
+                <span class="logo-item"><span class="logo-text serif">BESSEMER TRUST</span></span>
+                <span class="logo-item"><span class="logo-text serif">CORCORAN</span></span>
                 <span class="logo-item"><span class="logo-text serif">OMEGA</span></span>
                 <span class="logo-item"><img src="logos/ibm.png" alt="IBM"></span>
-                <span class="logo-item"><span class="logo-text serif sm">ESTÉE LAUDER</span></span>
-                <span class="logo-item"><span class="logo-text serif sm">MARRIOTT BONVOY</span></span>
+                <span class="logo-item"><span class="logo-text serif">ESTÉE LAUDER</span></span>
+                <span class="logo-item"><span class="logo-text serif">MARRIOTT BONVOY</span></span>
                 <span class="logo-item"><span class="logo-text serif">ORIGINS</span></span>
             </div>
         </div>
@@ -821,7 +819,7 @@
                 <div class="card-content">
                     <div class="card-label">Coming Soon</div>
                     <div class="card-logo">New Venture <span class="beta-badge">Beta</span></div>
-                    <p>Something new is in the works. Details coming soon.</p>
+                    <p>Something new is in the works. A new platform at the intersection of intelligence and opportunity. Details coming soon.</p>
                 </div>
             </a>
         </div>
