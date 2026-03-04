@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aaron Edwards — Founder & CEO, The Charles Group</title>
+    <title>Aaron Edwards | Founder & CEO, The Charles Group</title>
     <meta name="description" content="Aaron Edwards is the Founder and CEO of The Charles Group, a Cannes Lions-winning, five-time Inc. 5000 creative agency serving Fortune 50 brands.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -393,8 +393,11 @@
         }
 
         /* ── About ───────────────────────────────── */
-        .about-content {
-            max-width: 720px;
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 64px;
+            align-items: start;
         }
 
         .about-content p {
@@ -408,6 +411,15 @@
             font-size: 22px;
             color: var(--text);
             line-height: 1.7;
+        }
+
+        .about-photo {
+            width: 100%;
+            border-radius: 12px;
+            object-fit: cover;
+            aspect-ratio: 3/4;
+            position: sticky;
+            top: 100px;
         }
 
         /* ── Speaking ────────────────────────────── */
@@ -702,6 +714,16 @@
 
             .topic-number { font-size: 36px; }
 
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .about-photo {
+                max-height: 400px;
+                position: static;
+            }
+
             .contact-grid {
                 grid-template-columns: 1fr;
                 gap: 48px;
@@ -738,7 +760,7 @@
 
     <!-- Hero -->
     <header class="hero">
-        <div class="hero-label">Founder & CEO — The Charles Group</div>
+        <div class="hero-label">Founder & CEO | The Charles Group</div>
         <h1>Over a decade bringing <strong>intelligence and outstanding creativity</strong> to the world's most prestigious brands</h1>
         <p class="hero-sub">Founder & CEO of The Charles Group, the creative agency trusted by Cartier, HP, Omega, St. Regis, IBM, and the Fortune 50.</p>
         <div class="hero-tagline">Strategist · Speaker · Investor</div>
@@ -831,11 +853,14 @@
     <section id="about" class="fade-in">
         <div class="section-label">About</div>
         <h2 class="section-title">The story</h2>
-        <div class="about-content">
-            <p>Aaron Edwards founded The Charles Group over a decade ago with a simple thesis: the best creative work comes from agencies that think like businesses, not just studios.</p>
-            <p>That conviction built a firm that now serves Fortune 50 clients across luxury, lifestyle, and financial services — Cartier, HP, Diageo, Boston Consulting Group, Roc Nation — from offices in New York, Chicago, and London. A five-time Inc. 5000 honoree, the work has earned a Cannes Lion, D&AD Pencils, Webby Awards, and a reputation for creative excellence that moves numbers.</p>
-            <p>Before building The Charles Group, Aaron studied and worked in finance — a background that still shapes every engagement. Where most agencies lead with creative, Aaron leads with analytical rigor: financial modeling, forecasting, and business-case development that turns marketing from a cost center into a growth engine. He coined the term "Brandformance™" to describe this philosophy — fusing brand strategy with performance accountability to solve for the business challenge, not just the marketing challenge.</p>
-            <p>He is based in New York.</p>
+        <div class="about-grid">
+            <div class="about-content">
+                <p>Aaron co-founded The Charles Group in 2011 with his sister Samantha Edwards. With almost identical views on brands, businesses, and the creative landscape, they set out to build an agency with a difference.</p>
+                <p>That conviction built a firm that now serves Fortune 50 clients across luxury, lifestyle, and financial services, including Cartier, HP, St. Regis, Boston Consulting Group, and IBM, from offices in New York, Chicago, and London. A five-time Inc. 5000 honoree, the work has earned a Cannes Lion, D&AD Pencils, Webby Awards, and a reputation for creative excellence that moves numbers.</p>
+                <p>Before building The Charles Group, Aaron studied and worked in finance, a background that still shapes every engagement. He leads with analytical rigor: financial modeling, forecasting, and business-case development that turns marketing from a cost center into a growth engine. He coined the term "Brandformance™" to describe this philosophy, fusing brand strategy with performance accountability to solve for the business challenge, not just the marketing challenge.</p>
+                <p>He is based in New York.</p>
+            </div>
+            <img src="aaron-headshot.jpg" alt="Aaron Edwards" class="about-photo">
         </div>
     </section>
 
@@ -852,14 +877,14 @@
                 <div class="topic-number">01</div>
                 <div>
                     <h3>Brandformance™: Solving the Business Challenge, Not Just the Marketing Challenge</h3>
-                    <p>Why the divide between brand and performance marketing is a false choice — and how a consultative approach built on financial modeling, forecasting, and analytical rigor is winning Fortune 50 budgets.</p>
+                    <p>Why the divide between brand and performance marketing is a false choice, and how a consultative approach built on financial modeling, forecasting, and analytical rigor is winning Fortune 50 budgets.</p>
                 </div>
             </div>
             <div class="topic-card">
                 <div class="topic-number">02</div>
                 <div>
                     <h3>The Financial Architecture of Creative Excellence</h3>
-                    <p>Great creative needs a financial foundation. How we use modeling, forecasting, and business-case discipline to create the conditions where exceptional work happens — and delivers measurable outcomes.</p>
+                    <p>Great creative needs a financial foundation. How we use modeling, forecasting, and business-case discipline to create the conditions where exceptional work happens and delivers measurable outcomes.</p>
                 </div>
             </div>
             <div class="topic-card">
@@ -888,7 +913,7 @@
 
         <!-- NY1 Video -->
         <div class="video-section">
-            <h3>Super Bowl LX — Advertising Analysis</h3>
+            <h3>Super Bowl LX | Advertising Analysis</h3>
             <div class="video-meta">NY1 Spectrum News · February 2026</div>
             <div class="video-placeholder">
                 <p>▶ <a href="https://ny1.com/nyc/all-boroughs/CTV/2026/02/09/advertisers-pull-out-all-the-stops-for-super-bowl-lx" target="_blank">Watch the full segment on NY1</a></p>
@@ -913,7 +938,7 @@
             </div>
             <div class="award-item">
                 <div class="award-name">D&AD</div>
-                <div class="award-detail">2x Pencils — WSJ × Netflix</div>
+                <div class="award-detail">2x Pencils | WSJ × Netflix</div>
             </div>
             <div class="award-item">
                 <div class="award-name">Webby Awards</div>
@@ -935,7 +960,7 @@
         <div class="contact-grid">
             <div class="contact-info">
                 <h3>Speaking inquiries, press, and business.</h3>
-                <p>For keynote bookings, media requests, or professional inquiries — reach out directly.</p>
+                <p>For keynote bookings, media requests, or professional inquiries, reach out directly.</p>
                 <div class="contact-links">
                     <a href="https://www.linkedin.com/in/aaroncedwards/" target="_blank">LinkedIn ↗</a>
                     <a href="mailto:aaron@thecharlesnyc.com">Email ↗</a>
