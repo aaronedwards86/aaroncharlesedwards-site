@@ -5,52 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aaron Edwards | Founder & CEO, The Charles Group</title>
     <meta name="description" content="Aaron Edwards is the Founder and CEO of The Charles Group, a Cannes Lions-winning, five-time Inc. 5000 creative agency serving Fortune 50 brands.">
-
-    <!-- Canonical -->
-    <link rel="canonical" href="https://aaroncharlesedwards.com/">
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Aaron Edwards | Founder & CEO, The Charles Group">
-    <meta property="og:description" content="Aaron Edwards is the Founder and CEO of The Charles Group, a Cannes Lions-winning, five-time Inc. 5000 creative agency serving Fortune 50 brands.">
-    <meta property="og:url" content="https://aaroncharlesedwards.com/">
-    <meta property="og:site_name" content="Aaron Edwards">
-    <meta property="og:image" content="https://aaroncharlesedwards.com/aaron-headshot.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:locale" content="en_US">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Aaron Edwards | Founder & CEO, The Charles Group">
-    <meta name="twitter:description" content="Aaron Edwards is the Founder and CEO of The Charles Group, a Cannes Lions-winning, five-time Inc. 5000 creative agency serving Fortune 50 brands.">
-    <meta name="twitter:image" content="https://aaroncharlesedwards.com/aaron-headshot.jpg">
-
-    <!-- JSON-LD Person Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Aaron Edwards",
-        "jobTitle": "Founder & CEO",
-        "worksFor": {
-            "@type": "Organization",
-            "name": "The Charles Group",
-            "url": "https://thecharlesnyc.com"
-        },
-        "url": "https://aaroncharlesedwards.com",
-        "sameAs": [
-            "https://www.linkedin.com/in/aaroncedwards/"
-        ],
-        "alumniOf": [
-            {"@type": "CollegeOrUniversity", "name": "Wharton Business School"},
-            {"@type": "CollegeOrUniversity", "name": "University of Hull"}
-        ],
-        "knowsAbout": ["Brand Strategy", "Luxury Marketing", "Creative Agency Leadership", "Financial Modeling", "Brandformance"],
-        "award": ["Cannes Lions", "Inc. 5000 (5x)", "D&AD Pencils (2x)", "Webby Awards"]
-    }
-    </script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -1123,20 +1077,18 @@
                     <a href="mailto:aaron@thecharlesnyc.com">Email ↗</a>
                 </div>
             </div>
-            <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contact-form">
-                <input type="hidden" name="form-name" value="contact">
-                <p class="hidden" style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent. Thank you.');">
                 <div class="form-group">
                     <label>Name</label>
-                    <input type="text" name="name" placeholder="Your name" required>
+                    <input type="text" placeholder="Your name" required>
                 </div>
                 <div class="form-group">
                     <label>Email</label>
-                    <input type="email" name="email" placeholder="your@email.com" required>
+                    <input type="email" placeholder="your@email.com" required>
                 </div>
                 <div class="form-group">
                     <label>Subject</label>
-                    <select name="subject" required>
+                    <select required>
                         <option value="" disabled selected>Select a topic</option>
                         <option value="speaking">Speaking Inquiry</option>
                         <option value="press">Press</option>
@@ -1146,44 +1098,10 @@
                 </div>
                 <div class="form-group">
                     <label>Message</label>
-                    <textarea name="message" placeholder="How can I help?" required></textarea>
+                    <textarea placeholder="How can I help?" required></textarea>
                 </div>
                 <button type="submit" class="form-submit">Send Message</button>
-                <div id="form-status" style="display:none; text-align:center; padding:12px; font-size:14px; border-radius:6px;"></div>
             </form>
-            <script>
-                document.getElementById('contact-form').addEventListener('submit', async function(e) {
-                    e.preventDefault();
-                    const form = e.target;
-                    const btn = form.querySelector('.form-submit');
-                    const status = document.getElementById('form-status');
-                    btn.disabled = true;
-                    btn.textContent = 'Sending...';
-                    try {
-                        const response = await fetch('/', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                            body: new URLSearchParams(new FormData(form)).toString()
-                        });
-                        if (response.ok) {
-                            status.style.display = 'block';
-                            status.style.background = '#f0fdf4';
-                            status.style.color = '#15803d';
-                            status.textContent = 'Message sent. Thank you.';
-                            form.reset();
-                        } else {
-                            throw new Error('Form submission failed');
-                        }
-                    } catch(err) {
-                        status.style.display = 'block';
-                        status.style.background = '#fef2f2';
-                        status.style.color = '#dc2626';
-                        status.textContent = 'Something went wrong. Please email aaron@thecharlesnyc.com directly.';
-                    }
-                    btn.disabled = false;
-                    btn.textContent = 'Send Message';
-                });
-            </script>
         </div>
     </section>
 
