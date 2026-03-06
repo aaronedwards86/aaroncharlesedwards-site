@@ -1,0 +1,11 @@
+# Redirect old /blog/ URLs to /insights/ (preserve SEO juice)
+/blog/                                      /insights/                                    301
+/blog/why-brandformance-is-the-future/       /insights/why-brandformance-is-the-future/    301
+/blog/why-brandformance-is-the-future        /insights/why-brandformance-is-the-future/    301
+/blog/the-great-agency-rebundle/             /insights/the-great-agency-rebundle/           301
+/blog/the-great-agency-rebundle              /insights/the-great-agency-rebundle/           301
+
+# Redirect old Squarespace pages to homepage
+/home                                        /                                             301
+/band                                        /                                             301
+/news-harris                                 /                                             301
