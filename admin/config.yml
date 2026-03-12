@@ -1,0 +1,70 @@
+# Decap CMS Configuration
+# ========================
+# NOTE: This site is pure static HTML (no SSG). Decap CMS manages content
+# in YAML data files under /content/. A small build step or client-side JS
+# snippet will be needed to pull this data into index.html. For now, the CMS
+# structure is in place — wiring the rendering is the next step.
+
+backend:
+  name: git-gateway
+  branch: main
+
+# Publish mode: editorial workflow enables draft/review/publish states
+publish_mode: editorial_workflow
+
+# Media files
+media_folder: "images"
+public_folder: "/images"
+
+# Site sections as file-based collections
+collections:
+  - name: "sections"
+    label: "Page Sections"
+    label_singular: "Section"
+    description: "Editable content sections for the homepage"
+    files:
+      - name: "hero"
+        label: "Hero Section"
+        file: "content/hero.yml"
+        fields:
+          - { label: "Credential Line", name: "credential", widget: "string", hint: "e.g. 'Aaron is a Founder, Speaker & Investor'" }
+          - { label: "Main Headline", name: "headline", widget: "text", hint: "The primary hero paragraph" }
+          - { label: "Personal Tagline", name: "tagline", widget: "string", hint: "e.g. 'Family man. Car enthusiast. World traveler. Sports fanatic.'" }
+
+      - name: "about"
+        label: "About / Bio Section"
+        file: "content/about.yml"
+        fields:
+          - { label: "Section Label", name: "label", widget: "string", default: "About" }
+          - { label: "Section Title", name: "title", widget: "string", default: "The story" }
+          - { label: "Bio Text", name: "body", widget: "markdown" }
+          - { label: "Headshot", name: "photo", widget: "image", required: false }
+
+      - name: "speaking"
+        label: "Speaking Section"
+        file: "content/speaking.yml"
+        fields:
+          - { label: "Section Label", name: "label", widget: "string", default: "Speaking" }
+          - { label: "Section Title", name: "title", widget: "string", default: "Keynotes, panels & guest lectures" }
+          - { label: "Intro Text", name: "intro", widget: "text" }
+          - label: "Topics"
+            name: "topics"
+            widget: "list"
+            fields:
+              - { label: "Topic Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+
+      - name: "ventures"
+        label: "Ventures Section"
+        file: "content/ventures.yml"
+        fields:
+          - { label: "Section Label", name: "label", widget: "string", default: "Ventures" }
+          - { label: "Section Title", name: "title", widget: "string", default: "What I'm building." }
+          - label: "Ventures"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Role", name: "role", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "URL", name: "url", widget: "string", required: false }

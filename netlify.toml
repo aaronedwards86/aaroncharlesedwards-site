@@ -1,0 +1,16 @@
+# Netlify configuration for aaronedwards.com
+# Static site — no build command needed
+
+[build]
+  publish = "."
+
+# Enable branch deploy previews
+[context.deploy-preview]
+  publish = "."
+
+# Staging branch context
+[context.staging]
+  publish = "."
+
+# Enable Netlify Identity for Decap CMS
+# (Identity + Git Gateway must also be enabled in Netlify dashboard)
