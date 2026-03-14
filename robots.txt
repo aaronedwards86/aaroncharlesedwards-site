@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /_deploy/
+Disallow: /content/
 
 Sitemap: https://aaroncharlesedwards.com/sitemap.xml

@@ -8,4 +8,12 @@
 # Redirect old Squarespace pages to homepage
 /home                                        /                                             301
 /band                                        /                                             301
+/band/                                       /                                             301
+/about-harris                                /                                             301
+/about-harris/                               /                                             301
+/services-harris                             /                                             301
+/services-harris/                            /                                             301
 /news-harris                                 /                                             301
+
+# Force www to non-www
+https://www.aaroncharlesedwards.com/*        https://aaroncharlesedwards.com/:splat        301
