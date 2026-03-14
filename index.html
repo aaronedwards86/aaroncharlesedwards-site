@@ -298,71 +298,66 @@
 
         /* ── Hero ────────────────────────────────── */
         .hero-wrapper {
-            position: relative;
-            min-height: 90vh;
-            overflow: hidden;
-            background: #0a0a0f;
-        }
-
-        .hero-video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.35;
-        }
-
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, rgba(10,10,15,0.3) 0%, rgba(10,10,15,0.5) 60%, rgba(10,10,15,0.95) 100%);
+            background: #ffffff;
+            border-bottom: 1px solid var(--border);
         }
 
         .hero {
-            position: relative;
-            z-index: 2;
-            min-height: 90vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            min-height: 92vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             align-items: center;
-            text-align: center;
-            padding: 140px 40px 80px;
+            gap: 80px;
+            padding: 120px 80px 80px;
             max-width: var(--max-width);
             margin: 0 auto;
         }
 
+        .hero-photo {
+            width: 100%;
+            max-width: 500px;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            object-position: center top;
+            border-radius: 2px;
+            display: block;
+        }
+
+        .hero-text {
+            display: flex;
+            flex-direction: column;
+        }
+
         .hero-credential {
-            font-size: 14px;
-            font-weight: 400;
-            letter-spacing: 2px;
-            color: rgba(255,255,255,0.6);
-            margin-bottom: 24px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-tertiary);
+            margin-bottom: 28px;
         }
 
         .hero h1 {
-            font-size: clamp(36px, 5vw, 56px);
-            font-weight: 600;
-            line-height: 1.25;
-            margin-bottom: 24px;
-            max-width: 800px;
-            color: #ffffff;
+            font-size: clamp(30px, 3.2vw, 50px);
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 28px;
+            color: var(--text);
         }
 
         .hero-sub {
-            font-size: 17px;
-            color: rgba(255,255,255,0.65);
-            max-width: 600px;
-            line-height: 1.8;
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.85;
             margin-bottom: 32px;
         }
 
         .hero-personal {
-            color: rgba(255,255,255,0.4);
-            font-size: 14px;
-            letter-spacing: 1px;
+            font-size: 11px;
+            color: var(--text-tertiary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         /* ── Sections ────────────────────────────── */
@@ -614,10 +609,7 @@
 
         /* ── About ───────────────────────────────── */
         .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 400px;
-            gap: 64px;
-            align-items: start;
+            max-width: 820px;
         }
 
         .about-content p {
@@ -708,6 +700,37 @@
         .cred-item .cred-role {
             font-size: 13px;
             color: var(--text-tertiary);
+        }
+
+        /* ── Speaking Engagements ───────────────── */
+        .speaking-engagements {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 64px;
+        }
+
+        .speaking-eng-item {
+            padding: 32px 28px;
+            border-right: 1px solid var(--border);
+        }
+
+        .speaking-eng-item:last-child { border-right: none; }
+
+        .speaking-eng-org {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--text);
+        }
+
+        .speaking-eng-role {
+            font-size: 13px;
+            color: var(--text-tertiary);
+            line-height: 1.5;
         }
 
         /* ── Video Embed ─────────────────────────── */
@@ -821,11 +844,13 @@
             transform: translateY(-4px);
         }
 
-        .award-icon {
-            font-size: 32px;
-            margin-bottom: 16px;
+        .award-mark {
             display: block;
-            opacity: 0.9;
+            width: 20px;
+            height: 1px;
+            background: var(--text);
+            opacity: 0.2;
+            margin: 0 auto 20px;
         }
 
         .award-name {
@@ -1328,8 +1353,18 @@
             .nav-links.open { display: flex; }
             .nav-toggle { display: block; }
 
-            .hero { padding: 100px 24px 60px; }
-            .hero-name { font-size: 48px; }
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 100px 24px 60px;
+                gap: 40px;
+                min-height: auto;
+            }
+            .hero-text { order: -1; }
+            .hero-photo {
+                max-width: 260px;
+                margin: 0 auto;
+                aspect-ratio: 1 / 1;
+            }
             section { padding: 64px 24px; }
             .clients { padding: 40px 24px; }
             .section-divider { margin: 0 24px; }
@@ -1366,8 +1401,12 @@
             .awards-grid { grid-template-columns: repeat(3, 1fr); }
             .award-item:nth-child(3)::after { display: none; }
             .award-item { padding: 32px 16px; }
-            .award-icon { font-size: 28px; }
 
+
+            .speaking-engagements { grid-template-columns: repeat(2, 1fr); }
+            .speaking-eng-item:nth-child(2) { border-right: none; }
+            .speaking-eng-item:nth-child(1),
+            .speaking-eng-item:nth-child(2) { border-bottom: 1px solid var(--border); }
             .press-hero-grid { grid-template-columns: 1fr; }
             .press-tv-grid { grid-template-columns: 1fr; }
             .press-speaking-photos { grid-template-columns: 1fr; }
@@ -1410,15 +1449,14 @@
 
     <!-- Hero -->
     <div class="hero-wrapper">
-        <video class="hero-video" autoplay muted loop playsinline>
-            <source src="hero-water3.mp4" type="video/mp4">
-        </video>
-        <div class="hero-overlay"></div>
         <header class="hero">
-            <div class="hero-credential">Aaron is a Founder, Speaker & Investor</div>
-            <h1>Bringing Intelligence And Outstanding Creativity To The World's Most Prestigious Brands.</h1>
-            <p class="hero-sub">With a foundation in finance and a philosophy rooted in analytical rigor, Aaron built The Charles Group into a Cannes Lions-winning, five-time Inc. 5000 creative agency trusted by Cartier, HP, Omega, St. Regis, and IBM.</p>
-            <div class="hero-personal">Family man. Car enthusiast. World traveler. Sports fanatic.</div>
+            <img src="aaron-headshot.jpg" alt="Aaron Edwards" class="hero-photo">
+            <div class="hero-text">
+                <div class="hero-credential">Founder · Speaker · Investor</div>
+                <h1>Bringing Intelligence And Outstanding Creativity To The World's Most Prestigious Brands.</h1>
+                <p class="hero-sub">CEO of The Charles Group. Cannes Lion winner. Five-time Inc. 5000. Coined Brandformance™ — where brand strategy meets performance accountability.</p>
+                <div class="hero-personal">Family man. Car enthusiast. World traveler. Sports fanatic.</div>
+            </div>
         </header>
     </div>
 
@@ -1512,11 +1550,10 @@
         <div class="about-grid">
             <div class="about-content">
                 <p>Aaron co-founded The Charles Group in 2011 with his sister Samantha Edwards. With almost identical views on brands, businesses, and the creative landscape, they set out to build an agency with a difference.</p>
-                <p>That conviction built a firm that now serves Fortune 50 clients across luxury, lifestyle, and financial services, including Cartier, HP, St. Regis, Boston Consulting Group, and IBM, from offices in New York, Chicago, and London. A five-time Inc. 5000 honoree, the work has earned a Cannes Lion, D&AD Pencils, Webby Awards, and a reputation for creative excellence that moves numbers.</p>
+                <p>That conviction built a firm that now serves Fortune 50 clients across luxury, lifestyle, and financial services — including Cartier, HP, St. Regis, Boston Consulting Group, and IBM — from offices in New York, Chicago, and London. The work has earned a Cannes Lion, D&AD Pencils, Webby Awards, and a reputation for creative excellence that moves numbers.</p>
                 <p>Before building The Charles Group, Aaron studied and worked in finance, a background that still shapes every engagement. He leads with analytical rigor: financial modeling, forecasting, and business-case development that turns marketing from a cost center into a growth engine. He coined the term "Brandformance™" to describe this philosophy, fusing brand strategy with performance accountability to solve for the business challenge, not just the marketing challenge.</p>
                 <p>He is based in New York.</p>
             </div>
-            <img src="aaron-headshot.jpg" alt="Aaron Edwards" class="about-photo">
         </div>
     </section>
 
@@ -1532,21 +1569,23 @@
 
 
 
-        <!-- Speaking Photos -->
-        <div class="speaking-photos">
-            <div class="speaking-photo-card">
-                <img src="columbia-speaking.jpg" alt="Aaron Edwards speaking at Columbia Business School" style="object-position: right 75%;">
-                <div class="photo-info">
-                    <div class="photo-org">Columbia Business School</div>
-                    <div class="photo-role">Guest Lecturer, MBA Marketing Strategy</div>
-                </div>
+        <!-- Speaking Engagements -->
+        <div class="speaking-engagements">
+            <div class="speaking-eng-item">
+                <div class="speaking-eng-org">Columbia Business School</div>
+                <div class="speaking-eng-role">Guest Lecturer — MBA Marketing Strategy</div>
             </div>
-            <div class="speaking-photo-card">
-                <img src="nyu-speaking.jpg" alt="Aaron Edwards at NYU" style="object-position: left 25%;">
-                <div class="photo-info">
-                    <div class="photo-org">NYU</div>
-                    <div class="photo-role">Guest Lecturer</div>
-                </div>
+            <div class="speaking-eng-item">
+                <div class="speaking-eng-org">New York University</div>
+                <div class="speaking-eng-role">Guest Lecturer</div>
+            </div>
+            <div class="speaking-eng-item">
+                <div class="speaking-eng-org">Pace University — Lubin School</div>
+                <div class="speaking-eng-role">Board of Advisors, since 2020</div>
+            </div>
+            <div class="speaking-eng-item">
+                <div class="speaking-eng-org">HP CEO Summit</div>
+                <div class="speaking-eng-role">Panel: Global Supplier Diversity Program</div>
             </div>
         </div>
 
@@ -1570,31 +1609,31 @@
         <!-- Awards Row -->
         <div class="awards-grid">
             <div class="award-item">
-                <span class="award-icon">🦁</span>
+                <span class="award-mark"></span>
                 <div class="award-name">Cannes Lions</div>
                 <div class="award-detail">International Festival of Creativity</div>
                 <span class="award-stat">Winner</span>
             </div>
             <div class="award-item">
-                <span class="award-icon">🚀</span>
+                <span class="award-mark"></span>
                 <div class="award-name">Inc. 5000</div>
                 <div class="award-detail">Fastest-Growing Private Companies</div>
                 <span class="award-stat">5× Consecutive</span>
             </div>
             <div class="award-item">
-                <span class="award-icon">✏️</span>
+                <span class="award-mark"></span>
                 <div class="award-name">D&AD Pencils</div>
                 <div class="award-detail">WSJ × Netflix Cocainomics</div>
                 <span class="award-stat">2× Winner</span>
             </div>
             <div class="award-item">
-                <span class="award-icon">🏆</span>
+                <span class="award-mark"></span>
                 <div class="award-name">Webby Awards</div>
                 <div class="award-detail">Best Branded Editorial Experience</div>
                 <span class="award-stat">Winner</span>
             </div>
             <div class="award-item">
-                <span class="award-icon">⭐</span>
+                <span class="award-mark"></span>
                 <div class="award-name">Creative Review</div>
                 <div class="award-detail">Annual Selection</div>
                 <span class="award-stat">Selected</span>
@@ -1700,36 +1739,6 @@
             </div>
         </div>
 
-        <!-- Speaking & Academia -->
-        <div class="press-category">
-            <div class="press-category-label">Speaking & Academia</div>
-            <div class="press-speaking-photos">
-                <div class="press-speaking-photo-card">
-                    <img src="/columbia-speaking.jpg" alt="Aaron Edwards speaking at Columbia Business School" loading="lazy">
-                    <div class="press-speaking-photo-overlay">
-                        <div class="press-speaking-photo-org">Columbia Business School</div>
-                        <div class="press-speaking-photo-role">Guest Lecturer — MBA Marketing Strategy</div>
-                    </div>
-                </div>
-                <div class="press-speaking-photo-card">
-                    <img src="/nyu-speaking.jpg" alt="Aaron Edwards speaking at NYU" loading="lazy">
-                    <div class="press-speaking-photo-overlay">
-                        <div class="press-speaking-photo-org">New York University</div>
-                        <div class="press-speaking-photo-role">Guest Lecturer</div>
-                    </div>
-                </div>
-            </div>
-            <div class="press-speaking-extras">
-                <div class="press-speaking-extra-item">
-                    <div class="press-speaking-extra-org">Pace University — Lubin School</div>
-                    <div class="press-speaking-extra-role">Board of Advisors, since 2020</div>
-                </div>
-                <div class="press-speaking-extra-item">
-                    <div class="press-speaking-extra-org">HP CEO Summit</div>
-                    <div class="press-speaking-extra-role">Panel: Global Supplier Diversity Program with Terrell Smith</div>
-                </div>
-            </div>
-        </div>
 
         <a href="#" class="press-archive-link">View full press archive →</a>
 
@@ -1838,21 +1847,16 @@
         // Nav scroll behavior - transparent on hero, solid after
         const nav = document.querySelector('nav');
         const heroWrapper = document.querySelector('.hero-wrapper');
-        const navName = document.querySelector('.nav-name');
-        const navLinks = document.querySelectorAll('.nav-links a:not(.nav-cta)');
+
 
         function updateNav() {
             const heroBottom = heroWrapper.offsetHeight;
             if (window.scrollY > heroBottom - 80) {
-                nav.style.background = 'rgba(255,255,255,0.95)';
+                nav.style.background = 'rgba(255,255,255,0.97)';
                 nav.style.borderBottom = '1px solid rgba(0,0,0,0.08)';
-                navName.style.color = '#111';
-                navLinks.forEach(l => l.style.color = '');
             } else {
-                nav.style.background = 'transparent';
-                nav.style.borderBottom = '1px solid transparent';
-                navName.style.color = '#fff';
-                navLinks.forEach(l => l.style.color = 'rgba(255,255,255,0.7)');
+                nav.style.background = 'rgba(255,255,255,0.85)';
+                nav.style.borderBottom = '1px solid rgba(0,0,0,0.06)';
             }
         }
         window.addEventListener('scroll', updateNav);
