@@ -991,47 +991,139 @@
             border-bottom: 1px solid var(--border);
         }
 
-        .press-grid {
+        /* Hero press highlights — dark 2×2 grid */
+        .press-hero-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
+            margin-top: 56px;
+            margin-bottom: 0;
         }
 
-        .press-card {
-            padding: 28px;
-            background: var(--bg-elevated);
-            border: 1px solid var(--border);
+        .press-hero-card {
+            padding: 36px;
+            background: #111111;
             border-radius: 8px;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
+            text-decoration: none;
+            color: #ffffff;
+            min-height: 180px;
+            transition: opacity 0.2s, transform 0.2s;
+        }
+
+        .press-hero-card:hover {
+            opacity: 0.88;
+            transform: translateY(-2px);
+        }
+
+        .press-hero-pub {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.45);
+        }
+
+        .press-hero-headline {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.45;
+            flex: 1;
+            color: #ffffff;
+        }
+
+        .press-hero-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 4px;
+        }
+
+        .press-hero-year {
+            font-size: 12px;
+            color: rgba(255,255,255,0.4);
+        }
+
+        .press-hero-arrow {
+            font-size: 14px;
+            color: rgba(255,255,255,0.45);
+            transition: color 0.2s;
+        }
+
+        .press-hero-card:hover .press-hero-arrow { color: #ffffff; }
+
+        /* Publication logo bar */
+        .press-logo-bar {
+            display: flex;
+            align-items: center;
+            overflow-x: auto;
+            padding: 30px 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            margin: 48px 0 64px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .press-logo-bar::-webkit-scrollbar { display: none; }
+
+        .press-logo-item {
+            flex-shrink: 0;
+            padding: 0 28px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: var(--text-tertiary);
+            white-space: nowrap;
+            border-right: 1px solid var(--border);
+        }
+
+        .press-logo-item:first-child { padding-left: 0; }
+        .press-logo-item:last-child { border-right: none; }
+
+        /* TV items — compact */
+        .press-tv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .press-tv-card {
+            padding: 24px 28px;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 8px;
             text-decoration: none;
             color: var(--text);
             transition: border-color 0.3s, transform 0.2s;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
 
-        .press-card:hover {
+        .press-tv-card:hover {
             border-color: rgba(0,0,0,0.18);
             transform: translateY(-2px);
         }
 
-        .press-pub {
-            font-size: 11px;
+        .press-tv-network {
+            font-size: 10px;
             font-weight: 700;
-            letter-spacing: 2px;
+            letter-spacing: 2.5px;
             text-transform: uppercase;
             color: var(--text-tertiary);
         }
 
-        .press-headline {
+        .press-tv-title {
             font-size: 15px;
-            font-weight: 400;
-            color: var(--text);
-            line-height: 1.55;
+            font-weight: 500;
+            line-height: 1.4;
             flex: 1;
         }
 
-        .press-meta {
+        .press-tv-meta {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -1049,61 +1141,9 @@
             transition: color 0.2s;
         }
 
-        .press-card:hover .press-arrow { color: var(--text); }
+        .press-tv-card:hover .press-arrow { color: var(--text); }
 
-        /* TV items */
-        .press-tv-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .press-tv-card {
-            padding: 32px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            text-decoration: none;
-            color: var(--text);
-            transition: border-color 0.3s, transform 0.2s;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .press-tv-card:hover {
-            border-color: rgba(0,0,0,0.18);
-            transform: translateY(-2px);
-        }
-
-        .press-tv-network {
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--text-tertiary);
-        }
-
-        .press-tv-title {
-            font-size: 18px;
-            font-weight: 500;
-            line-height: 1.4;
-        }
-
-        .press-tv-desc {
-            font-size: 14px;
-            color: var(--text-secondary);
-            line-height: 1.65;
-            flex: 1;
-        }
-
-        .press-tv-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        /* Podcast items */
+        /* Podcast compact list */
         .podcast-list {
             display: flex;
             flex-direction: column;
@@ -1115,110 +1155,146 @@
         .podcast-item {
             display: flex;
             align-items: center;
-            gap: 20px;
-            padding: 24px 28px;
+            padding: 18px 24px;
             text-decoration: none;
             color: var(--text);
             border-bottom: 1px solid var(--border);
             transition: background 0.2s;
+            gap: 0;
         }
 
         .podcast-item:last-child { border-bottom: none; }
-
         .podcast-item:hover { background: var(--bg-elevated); }
 
-        .podcast-icon { font-size: 22px; flex-shrink: 0; }
-
-        .podcast-info { flex: 1; }
-
         .podcast-show {
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 600;
-            margin-bottom: 3px;
+            flex-shrink: 0;
+            min-width: 210px;
+        }
+
+        .podcast-sep {
+            font-size: 12px;
+            color: var(--border);
+            margin: 0 14px;
+            flex-shrink: 0;
         }
 
         .podcast-episode {
             font-size: 13px;
             color: var(--text-secondary);
-        }
-
-        .podcast-right {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            gap: 4px;
-            flex-shrink: 0;
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .podcast-year {
             font-size: 12px;
             color: var(--text-tertiary);
+            flex-shrink: 0;
+            margin-left: 24px;
         }
 
         .podcast-arrow {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--text-tertiary);
+            margin-left: 12px;
+            flex-shrink: 0;
             transition: color 0.2s;
         }
 
         .podcast-item:hover .podcast-arrow { color: var(--text); }
 
-        /* Speaking in press section */
-        .press-speaking-grid {
+        /* Speaking photo cards */
+        .press-speaking-photos {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 16px;
         }
 
-        .press-speaking-item {
-            padding: 24px 28px;
-            background: var(--bg-elevated);
-            border: 1px solid var(--border);
+        .press-speaking-photo-card {
+            position: relative;
             border-radius: 8px;
+            overflow: hidden;
+            aspect-ratio: 4 / 3;
         }
 
-        .press-speaking-org {
-            font-size: 15px;
+        .press-speaking-photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.72);
+            transition: filter 0.3s;
+        }
+
+        .press-speaking-photo-card:hover img { filter: brightness(0.6); }
+
+        .press-speaking-photo-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 24px;
+            background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 100%);
+        }
+
+        .press-speaking-photo-org {
+            font-size: 16px;
             font-weight: 600;
-            margin-bottom: 5px;
+            color: #ffffff;
+            margin-bottom: 4px;
         }
 
-        .press-speaking-role {
-            font-size: 13px;
-            color: var(--text-tertiary);
-            line-height: 1.5;
+        .press-speaking-photo-role {
+            font-size: 12px;
+            color: rgba(255,255,255,0.68);
+            letter-spacing: 0.3px;
         }
 
-        /* Awards in press section */
-        .press-awards-row {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 16px;
-        }
-
-        .press-award-tag {
+        .press-speaking-extras {
             display: flex;
             flex-direction: column;
-            gap: 8px;
-            padding: 20px 20px;
-            background: var(--bg-elevated);
             border: 1px solid var(--border);
             border-radius: 8px;
+            overflow: hidden;
         }
 
-        .press-award-icon { font-size: 22px; }
+        .press-speaking-extra-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 24px;
+            border-bottom: 1px solid var(--border);
+        }
 
-        .press-award-name {
+        .press-speaking-extra-item:last-child { border-bottom: none; }
+
+        .press-speaking-extra-org {
             font-size: 14px;
             font-weight: 600;
-            line-height: 1.3;
         }
 
-        .press-award-sub {
-            font-size: 12px;
+        .press-speaking-extra-role {
+            font-size: 13px;
             color: var(--text-tertiary);
-            line-height: 1.4;
         }
+
+        /* Press archive link */
+        .press-archive-link {
+            display: block;
+            text-align: center;
+            margin-top: 56px;
+            font-size: 13px;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            transition: color 0.2s;
+        }
+
+        .press-archive-link:hover { color: var(--text); }
 
         /* ── Animations ──────────────────────────── */
         .fade-in {
@@ -1292,10 +1368,13 @@
             .award-item { padding: 32px 16px; }
             .award-icon { font-size: 28px; }
 
-            .press-grid { grid-template-columns: 1fr; }
+            .press-hero-grid { grid-template-columns: 1fr; }
             .press-tv-grid { grid-template-columns: 1fr; }
-            .press-speaking-grid { grid-template-columns: 1fr; }
-            .press-awards-row { grid-template-columns: repeat(2, 1fr); }
+            .press-speaking-photos { grid-template-columns: 1fr; }
+            .podcast-show { min-width: 0; }
+            .podcast-sep { display: none; }
+            .podcast-episode { display: none; }
+            .press-speaking-extra-item { flex-direction: column; align-items: flex-start; gap: 4px; }
 
             footer {
                 flex-direction: column;
@@ -1487,6 +1566,8 @@
     <section id="press" class="fade-in">
         <div class="section-label">Press</div>
         <h2 class="section-title">Awards & press</h2>
+
+        <!-- Awards Row -->
         <div class="awards-grid">
             <div class="award-item">
                 <span class="award-icon">🦁</span>
@@ -1520,85 +1601,52 @@
             </div>
         </div>
 
-        <h3 class="section-subtitle" style="font-size:1.1rem;font-weight:600;margin:48px 0 24px;color:var(--text-muted);">As seen in</h3>
+        <!-- Hero Press Highlights -->
+        <div class="press-hero-grid">
+            <a href="https://www.forbes.com/profile/aaron-edwards/" target="_blank" rel="noopener" class="press-hero-card">
+                <div class="press-hero-pub">Forbes</div>
+                <div class="press-hero-headline">30 Under 30 — Honoree</div>
+                <div class="press-hero-meta">
+                    <span class="press-hero-year">2018</span>
+                    <span class="press-hero-arrow">↗</span>
+                </div>
+            </a>
+            <a href="https://lbbonline.com/news/the-charles-group-meet-the-agency-sparking-growth-with-reinvention" target="_blank" rel="noopener" class="press-hero-card">
+                <div class="press-hero-pub">LBB Online</div>
+                <div class="press-hero-headline">The Charles Group: Sparking Growth with Reinvention</div>
+                <div class="press-hero-meta">
+                    <span class="press-hero-year">Feb 2025</span>
+                    <span class="press-hero-arrow">↗</span>
+                </div>
+            </a>
+            <a href="https://www.ispot.tv/ad/I99Y/2019-jaguar-f-pace-the-new-faces-of-jaguar-t2" target="_blank" rel="noopener" class="press-hero-card">
+                <div class="press-hero-pub">Jaguar — National TV Campaign</div>
+                <div class="press-hero-headline">F-PACE: The New Faces of Jaguar</div>
+                <div class="press-hero-meta">
+                    <span class="press-hero-year">2019–2020</span>
+                    <span class="press-hero-arrow">↗</span>
+                </div>
+            </a>
+            <a href="https://www.dandad.org/" target="_blank" rel="noopener" class="press-hero-card">
+                <div class="press-hero-pub">D&AD / Webby Awards</div>
+                <div class="press-hero-headline">Cocainenomics — WSJ × Netflix branded editorial campaign</div>
+                <div class="press-hero-meta">
+                    <span class="press-hero-year">2× D&AD Pencil · Webby Winner</span>
+                    <span class="press-hero-arrow">↗</span>
+                </div>
+            </a>
+        </div>
 
-        <!-- Featured In -->
-        <div class="press-category">
-            <div class="press-category-label">Featured In</div>
-            <div class="press-grid">
-                <a href="https://www.forbes.com/profile/aaron-edwards/" target="_blank" rel="noopener" class="press-card">
-                    <div class="press-pub">Forbes</div>
-                    <div class="press-headline">30 Under 30 — Honoree</div>
-                    <div class="press-meta">
-                        <span class="press-year">2018</span>
-                        <span class="press-arrow">↗</span>
-                    </div>
-                </a>
-                <a href="https://design-milk.com/where-i-work-aaron-edwards-of-the-charles/" target="_blank" rel="noopener" class="press-card">
-                    <div class="press-pub">Design Milk</div>
-                    <div class="press-headline">Where I Work: Aaron Edwards of The Charles</div>
-                    <div class="press-meta">
-                        <span class="press-year">Apr 2017</span>
-                        <span class="press-arrow">↗</span>
-                    </div>
-                </a>
-                <a href="https://medium.com/authority-magazine/aaron-edwards-of-the-charles-on-how-to-use-digital-transformation-to-take-your-company-to-the-next-74d660ae6a9c" target="_blank" rel="noopener" class="press-card">
-                    <div class="press-pub">Authority Magazine</div>
-                    <div class="press-headline">Aaron Edwards of The Charles: Five Things You Need to Be a Highly Effective Leader</div>
-                    <div class="press-meta">
-                        <span class="press-year">2022</span>
-                        <span class="press-arrow">↗</span>
-                    </div>
-                </a>
-                <a href="https://lbbonline.com/news/the-charles-group-meet-the-agency-sparking-growth-with-reinvention" target="_blank" rel="noopener" class="press-card">
-                    <div class="press-pub">LBB Online</div>
-                    <div class="press-headline">Sparking Growth with Reinvention</div>
-                    <div class="press-meta">
-                        <span class="press-year">Feb 2025</span>
-                        <span class="press-arrow">↗</span>
-                    </div>
-                </a>
-                <a href="https://lbbonline.com/news/5-minutes-with-samantha-aaron-edwards" target="_blank" rel="noopener" class="press-card">
-                    <div class="press-pub">LBB Online</div>
-                    <div class="press-headline">5 Minutes with Samantha & Aaron Edwards</div>
-                    <div class="press-meta">
-                        <span class="press-year">Jun 2024</span>
-                        <span class="press-arrow">↗</span>
-                    </div>
-                </a>
-                <a href="https://www.campaignlive.com/article/exclusive-charles-group-names-john-dunleavy-global-managing-director/1934870" target="_blank" rel="noopener" class="press-card">
-                    <div class="press-pub">Campaign US</div>
-                    <div class="press-headline">Exclusive: Charles Group Names Global Managing Director</div>
-                    <div class="press-meta">
-                        <span class="press-year">Oct 2025</span>
-                        <span class="press-arrow">↗</span>
-                    </div>
-                </a>
-                <a href="https://girlboss.com/blogs/read/portrait-of-a-girlboss-how-creative-director-samantha-edwards" target="_blank" rel="noopener" class="press-card">
-                    <div class="press-pub">Girlboss</div>
-                    <div class="press-headline">Portrait of a Girlboss: Samantha Edwards, Creative Director at The Charles</div>
-                    <div class="press-meta">
-                        <span class="press-year">Jan 2017</span>
-                        <span class="press-arrow">↗</span>
-                    </div>
-                </a>
-                <a href="https://thecharlesnyc.com/chatbox/the-manual" target="_blank" rel="noopener" class="press-card">
-                    <div class="press-pub">The Manual</div>
-                    <div class="press-headline">Feature: Aaron Edwards on Brand and Building</div>
-                    <div class="press-meta">
-                        <span class="press-year">Feature</span>
-                        <span class="press-arrow">↗</span>
-                    </div>
-                </a>
-                <a href="https://supplychainnow.com/transforming-business-purpose-lwp97/" target="_blank" rel="noopener" class="press-card">
-                    <div class="press-pub">Supply Chain Now</div>
-                    <div class="press-headline">Transforming Business with Purpose</div>
-                    <div class="press-meta">
-                        <span class="press-year">Feb 2024</span>
-                        <span class="press-arrow">↗</span>
-                    </div>
-                </a>
-            </div>
+        <!-- Publication Logo Bar -->
+        <div class="press-logo-bar">
+            <span class="press-logo-item">Forbes</span>
+            <span class="press-logo-item">Campaign US</span>
+            <span class="press-logo-item">LBB Online</span>
+            <span class="press-logo-item">Design Milk</span>
+            <span class="press-logo-item">Authority Magazine</span>
+            <span class="press-logo-item">Supply Chain Now</span>
+            <span class="press-logo-item">Girlboss</span>
+            <span class="press-logo-item">The Manual</span>
         </div>
 
         <!-- TV & Video -->
@@ -1608,7 +1656,6 @@
                 <a href="https://youtu.be/dI1q3pCA534" target="_blank" rel="noopener" class="press-tv-card">
                     <div class="press-tv-network">NY1 Spectrum News</div>
                     <div class="press-tv-title">Super Bowl LVII — Ad Review & Analysis</div>
-                    <div class="press-tv-desc">On-air with Shannan Ferry, breaking down the year's biggest Super Bowl commercials from a creative agency perspective.</div>
                     <div class="press-tv-meta">
                         <span class="press-year">2023</span>
                         <span class="press-arrow">↗</span>
@@ -1617,7 +1664,6 @@
                 <a href="https://www.ispot.tv/ad/I99Y/2019-jaguar-f-pace-the-new-faces-of-jaguar-t2" target="_blank" rel="noopener" class="press-tv-card">
                     <div class="press-tv-network">Jaguar — National TV Campaign</div>
                     <div class="press-tv-title">F-PACE: The New Faces of Jaguar</div>
-                    <div class="press-tv-desc">Featured as "business owner Aaron Edwards" in Jaguar's national television campaign for the F-PACE, broadcast across major networks.</div>
                     <div class="press-tv-meta">
                         <span class="press-year">2019–2020</span>
                         <span class="press-arrow">↗</span>
@@ -1631,63 +1677,61 @@
             <div class="press-category-label">Podcasts</div>
             <div class="podcast-list">
                 <a href="https://creators.spotify.com/pod/profile/britsinthebigapple/episodes/Aaron-Edwards--CEO-of-The-Charles-Group-e19lmpd" target="_blank" rel="noopener" class="podcast-item">
-                    <div class="podcast-icon">🎙</div>
-                    <div class="podcast-info">
-                        <div class="podcast-show">Brits in the Big Apple</div>
-                        <div class="podcast-episode">Aaron Edwards, CEO of The Charles Group — Manchester to NYC, building a creative agency</div>
-                    </div>
-                    <div class="podcast-right">
-                        <span class="podcast-year">Spotify</span>
-                        <span class="podcast-arrow">↗</span>
-                    </div>
+                    <div class="podcast-show">Brits in the Big Apple</div>
+                    <span class="podcast-sep">·</span>
+                    <div class="podcast-episode">Aaron Edwards, CEO of The Charles Group — Manchester to NYC</div>
+                    <span class="podcast-year">Spotify</span>
+                    <span class="podcast-arrow">↗</span>
                 </a>
                 <a href="https://supplychainnow.com/transforming-business-purpose-lwp97/" target="_blank" rel="noopener" class="podcast-item">
-                    <div class="podcast-icon">🎙</div>
-                    <div class="podcast-info">
-                        <div class="podcast-show">Supply Chain Now — Logistics with Purpose</div>
-                        <div class="podcast-episode">Transforming Business with Purpose</div>
-                    </div>
-                    <div class="podcast-right">
-                        <span class="podcast-year">Feb 2024</span>
-                        <span class="podcast-arrow">↗</span>
-                    </div>
+                    <div class="podcast-show">Supply Chain Now</div>
+                    <span class="podcast-sep">·</span>
+                    <div class="podcast-episode">Transforming Business with Purpose</div>
+                    <span class="podcast-year">Feb 2024</span>
+                    <span class="podcast-arrow">↗</span>
                 </a>
                 <a href="https://podcasts.apple.com/us/podcast/aaron-edwards-ceo-of-the-charles-group/id1568314314?i=1000540661552" target="_blank" rel="noopener" class="podcast-item">
-                    <div class="podcast-icon">🎙</div>
-                    <div class="podcast-info">
-                        <div class="podcast-show">Apple Podcasts Feature</div>
-                        <div class="podcast-episode">Aaron Edwards, CEO of The Charles Group</div>
-                    </div>
-                    <div class="podcast-right">
-                        <span class="podcast-year">Nov 2021</span>
-                        <span class="podcast-arrow">↗</span>
-                    </div>
+                    <div class="podcast-show">Apple Podcasts Feature</div>
+                    <span class="podcast-sep">·</span>
+                    <div class="podcast-episode">Aaron Edwards, CEO of The Charles Group</div>
+                    <span class="podcast-year">Nov 2021</span>
+                    <span class="podcast-arrow">↗</span>
                 </a>
             </div>
         </div>
 
-        <!-- Speaking -->
+        <!-- Speaking & Academia -->
         <div class="press-category">
             <div class="press-category-label">Speaking & Academia</div>
-            <div class="press-speaking-grid">
-                <div class="press-speaking-item">
-                    <div class="press-speaking-org">Columbia Business School</div>
-                    <div class="press-speaking-role">Guest Lecturer — MBA Marketing Strategy</div>
+            <div class="press-speaking-photos">
+                <div class="press-speaking-photo-card">
+                    <img src="/columbia-speaking.jpg" alt="Aaron Edwards speaking at Columbia Business School" loading="lazy">
+                    <div class="press-speaking-photo-overlay">
+                        <div class="press-speaking-photo-org">Columbia Business School</div>
+                        <div class="press-speaking-photo-role">Guest Lecturer — MBA Marketing Strategy</div>
+                    </div>
                 </div>
-                <div class="press-speaking-item">
-                    <div class="press-speaking-org">New York University (NYU)</div>
-                    <div class="press-speaking-role">Guest Lecturer</div>
+                <div class="press-speaking-photo-card">
+                    <img src="/nyu-speaking.jpg" alt="Aaron Edwards speaking at NYU" loading="lazy">
+                    <div class="press-speaking-photo-overlay">
+                        <div class="press-speaking-photo-org">New York University</div>
+                        <div class="press-speaking-photo-role">Guest Lecturer</div>
+                    </div>
                 </div>
-                <div class="press-speaking-item">
-                    <div class="press-speaking-org">Pace University — Lubin School</div>
-                    <div class="press-speaking-role">Board of Advisors, since 2020</div>
+            </div>
+            <div class="press-speaking-extras">
+                <div class="press-speaking-extra-item">
+                    <div class="press-speaking-extra-org">Pace University — Lubin School</div>
+                    <div class="press-speaking-extra-role">Board of Advisors, since 2020</div>
                 </div>
-                <div class="press-speaking-item">
-                    <div class="press-speaking-org">HP CEO Summit</div>
-                    <div class="press-speaking-role">Panel: Global Supplier Diversity Program with Terrell Smith</div>
+                <div class="press-speaking-extra-item">
+                    <div class="press-speaking-extra-org">HP CEO Summit</div>
+                    <div class="press-speaking-extra-role">Panel: Global Supplier Diversity Program with Terrell Smith</div>
                 </div>
             </div>
         </div>
+
+        <a href="#" class="press-archive-link">View full press archive →</a>
 
     </section>
 
