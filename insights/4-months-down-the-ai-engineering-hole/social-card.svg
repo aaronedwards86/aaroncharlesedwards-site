@@ -19,7 +19,7 @@
 
   <!-- Title -->
   <text x="80" y="200" font-family="Playfair Display, Georgia, serif" font-size="68" font-weight="700" fill="#111" letter-spacing="-1">4 Months Down</text>
-  <text x="80" y="276" font-family="Playfair Display, Georgia, serif" font-size="68" font-weight="700" fill="#111" letter-spacing="-1">the AI Engineering Hole</text>
+  <text x="80" y="276" font-family="Playfair Display, Georgia, serif" font-size="68" font-weight="700" fill="#111" letter-spacing="-1">an AI Engineering Hole</text>
 
   <!-- Subtitle -->
   <text x="80" y="332" font-size="20" fill="#555">Three phases. One I'm still in. Notes from the build.</text>
