@@ -2,7 +2,7 @@
 
 ## Meta
 - **Title tag:** The Great Agency Rebundle: Independents Win in 2026
-- **Meta description:** Holding companies are merging agencies to fix what independent shops never broke. Why agency consolidation 2026 validates the Brandformance™ model.
+- **Meta description:** Holding companies are merging agencies to fix what independent shops never broke. Why agency consolidation 2026 validates the Brandformance model.
 - **Slug:** /insights/the-great-agency-rebundle/
 - **Publish date:** TBD (pending Aaron's approval)
 - **Author:** Aaron Edwards
@@ -41,7 +41,7 @@ So WPP collapses four agencies into one. Omnicom retires three legacy brands. Th
 
 At The Charles Group, Samantha Edwards, our co-founder and CCO, and I did not launch as a full-service agency. We started focused on strategy and design, then built capabilities deliberately over time, adding each discipline only when we could deliver it at the level our clients required. That methodical approach was intentional. We never believed in bolting on capabilities for the sake of a pitch deck.
 
-We called the philosophy [Brandformance™](/insights/why-brandformance-is-the-future/) before the industry had a word for the convergence: brand and performance are the same discipline, not separate line items. We never split creative and media into separate teams with separate incentives because it never made strategic sense to do so.
+We've been championing [Brandformance](/insights/why-brandformance-is-the-future/) before the industry had a word for the convergence: brand and performance are the same discipline, not separate line items. We never split creative and media into separate teams with separate incentives because it never made strategic sense to do so.
 
 Now we are going deeper into the areas that actually drive value for our clients: insights, analytics, and predictive modeling. When you build for Cartier, HP, or IBM, every dollar of creative spend should be traceable to a business outcome. That traceability gets sharper when you can model what will work before you spend, not just report on what happened after.
 
@@ -61,7 +61,7 @@ The holding company restructures will take 18 to 24 months to stabilize. During 
 
 Independent agencies are already operating the model you want. No legacy org charts to untangle. One team, one P&L, one accountability structure tied directly to your business outcomes.
 
-The holding company consolidation is not competition for independent agencies. It is validation. Brandformance™ was the answer before the holding companies understood the question. The great rebundle is not a new idea. It is the old idea, finally winning.
+The holding company consolidation is not competition for independent agencies. It is validation. Brandformance was the answer before the holding companies understood the question. The great rebundle is not a new idea. It is the old idea, finally winning.
 
 ---
 
