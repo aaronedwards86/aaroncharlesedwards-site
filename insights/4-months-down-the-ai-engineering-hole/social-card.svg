@@ -33,11 +33,11 @@
     <circle cx="490" cy="105" r="7" fill="#111"/>
     <circle cx="900" cy="155" r="7" fill="#111"/>
     <text x="220" y="-4" text-anchor="middle" font-size="13" font-weight="600" fill="#111" letter-spacing="1">PHASE 1</text>
-    <text x="220" y="225" text-anchor="middle" font-size="12" fill="#777" letter-spacing="2">FANTASTICAL</text>
+    <text x="220" y="225" text-anchor="middle" font-size="12" fill="#777" letter-spacing="2">BUILDING LIKE A CHILD</text>
     <text x="490" y="85" text-anchor="middle" font-size="13" font-weight="600" fill="#111" letter-spacing="1">PHASE 2</text>
-    <text x="490" y="225" text-anchor="middle" font-size="12" fill="#777" letter-spacing="2">AI WHISPERER</text>
+    <text x="490" y="225" text-anchor="middle" font-size="12" fill="#777" letter-spacing="2">BECOMING INSUFFERABLE</text>
     <text x="900" y="135" text-anchor="middle" font-size="13" font-weight="600" fill="#111" letter-spacing="1">PHASE 3</text>
-    <text x="900" y="225" text-anchor="middle" font-size="12" fill="#777" letter-spacing="2">BIG RESET</text>
+    <text x="900" y="225" text-anchor="middle" font-size="12" fill="#777" letter-spacing="2">WHERE I AM NOW</text>
   </g>
 
 </svg>
