@@ -456,8 +456,8 @@
 
         .logo-item {
             flex-shrink: 0;
-            height: 70px;
-            width: 200px;
+            height: 80px;
+            width: 240px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -465,8 +465,8 @@
         }
 
         .logo-item img {
-            max-height: 52px;
-            max-width: 180px;
+            max-height: 56px;
+            max-width: 220px;
             width: auto;
             height: auto;
             display: block;
@@ -477,9 +477,19 @@
         /* Square / narrow-ratio logos need more height to match the visual weight of wordmarks */
         .logo-item img[src*="hp"],
         .logo-item img[src*="bcg"],
-        .logo-item img[src*="omega"],
-        .logo-item img[src*="ibm"] {
+        .logo-item img[src*="omega"] {
             max-height: 64px;
+        }
+
+        /* Wide wordmarks that look thin: let them go wider so height is taller */
+        .logo-item img[src*="bloomberg"],
+        .logo-item img[src*="marriott"] {
+            max-width: 240px;
+        }
+
+        /* IBM mark looks oversized at 64; pull back */
+        .logo-item img[src*="ibm"] {
+            max-height: 44px;
         }
 
         .logo-text {
@@ -1503,7 +1513,6 @@
             <div class="logo-strip">
                 <span class="logo-item"><img src="logos/cartier.svg" alt="Cartier"></span>
                 <span class="logo-item"><img src="logos/hp.svg" alt="HP"></span>
-                <span class="logo-item"><img src="logos/stregis.svg" alt="St. Regis"></span>
                 <span class="logo-item"><img src="logos/bloomberg.svg" alt="Bloomberg"></span>
                 <span class="logo-item"><img src="logos/bcg.svg" alt="BCG"></span>
                 <span class="logo-item"><img src="logos/bnymellon.svg" alt="BNY Mellon"></span>
@@ -1520,7 +1529,6 @@
                 <!-- duplicate for seamless loop -->
                 <span class="logo-item"><img src="logos/cartier.svg" alt="Cartier"></span>
                 <span class="logo-item"><img src="logos/hp.svg" alt="HP"></span>
-                <span class="logo-item"><img src="logos/stregis.svg" alt="St. Regis"></span>
                 <span class="logo-item"><img src="logos/bloomberg.svg" alt="Bloomberg"></span>
                 <span class="logo-item"><img src="logos/bcg.svg" alt="BCG"></span>
                 <span class="logo-item"><img src="logos/bnymellon.svg" alt="BNY Mellon"></span>
