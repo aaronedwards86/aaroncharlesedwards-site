@@ -474,6 +474,14 @@
             filter: brightness(0);
         }
 
+        /* Square / narrow-ratio logos need more height to match the visual weight of wordmarks */
+        .logo-item img[src*="hp"],
+        .logo-item img[src*="bcg"],
+        .logo-item img[src*="omega"],
+        .logo-item img[src*="ibm"] {
+            max-height: 64px;
+        }
+
         .logo-text {
             font-size: 18px;
             letter-spacing: 4px;
