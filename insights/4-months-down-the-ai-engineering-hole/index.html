@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 Months Down the AI Engineering Hole | Aaron Edwards</title>
+    <meta name="description" content="Four months building agents and infrastructure full-time. The three phases I went through, the one I'm in now, and what it does to a business when you take it apart and put it back together while it's still trading.">
+
+    <link rel="canonical" href="https://aaroncharlesedwards.com/insights/4-months-down-the-ai-engineering-hole/">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="4 Months Down the AI Engineering Hole | Aaron Edwards">
+    <meta property="og:description" content="Four months building agents and infrastructure full-time. The three phases I went through, the one I'm in now, and what it does to a business when you take it apart and put it back together while it's still trading.">
+    <meta property="og:url" content="https://aaroncharlesedwards.com/insights/4-months-down-the-ai-engineering-hole/">
+    <meta property="og:image" content="https://aaroncharlesedwards.com/insights/4-months-down-the-ai-engineering-hole/ai-engineering-journey.svg">
+    <meta property="og:site_name" content="Aaron Edwards">
+    <meta property="og:locale" content="en_US">
+    <meta property="article:author" content="Aaron Edwards">
+    <meta property="article:published_time" content="2026-05-01">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="4 Months Down the AI Engineering Hole | Aaron Edwards">
+    <meta name="twitter:description" content="Four months building agents and infrastructure full-time. The three phases I went through, the one I'm in now, and what it does to a business when you take it apart and put it back together while it's still trading.">
+    <meta name="twitter:image" content="https://aaroncharlesedwards.com/insights/4-months-down-the-ai-engineering-hole/ai-engineering-journey.svg">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "4 Months Down the AI Engineering Hole",
+        "author": {
+            "@type": "Person",
+            "name": "Aaron Edwards",
+            "url": "https://aaroncharlesedwards.com"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "Aaron Edwards"
+        },
+        "datePublished": "2026-05-01",
+        "dateModified": "2026-05-01",
+        "description": "Four months building agents and infrastructure full-time. The three phases of AI engineering I went through, the discipline phase I'm in now, and what it does to a business when you take it apart and put it back together while it's still trading.",
+        "image": "https://aaroncharlesedwards.com/insights/4-months-down-the-ai-engineering-hole/ai-engineering-journey.svg",
+        "mainEntityOfPage": "https://aaroncharlesedwards.com/insights/4-months-down-the-ai-engineering-hole/"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://aaroncharlesedwards.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Insights",
+                "item": "https://aaroncharlesedwards.com/insights/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "4 Months Down the AI Engineering Hole",
+                "item": "https://aaroncharlesedwards.com/insights/4-months-down-the-ai-engineering-hole/"
+            }
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #ffffff;
+            --bg-elevated: #f8f8fa;
+            --bg-card: #f4f4f6;
+            --text: #111111;
+            --text-secondary: #555555;
+            --text-tertiary: #999999;
+            --accent: #111111;
+            --accent-dim: rgba(0, 0, 0, 0.05);
+            --border: rgba(0, 0, 0, 0.08);
+            --max-width: 1200px;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            padding: 20px 40px;
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-name { font-size: 14px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--text); text-decoration: none; }
+        .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 13px; font-weight: 400; letter-spacing: 0.5px; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--text); }
+        .nav-links a.active { color: var(--text); font-weight: 500; }
+        .nav-cta { background: var(--accent) !important; color: #ffffff !important; padding: 10px 24px; border-radius: 4px; font-weight: 500 !important; }
+        .nav-toggle { display: none; background: none; border: none; color: var(--text); font-size: 24px; cursor: pointer; }
+
+        .post-header {
+            padding: 140px 40px 40px;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+        .post-back {
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 32px;
+        }
+        .post-back:hover { color: var(--text); }
+        .post-meta {
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-tertiary);
+            margin-bottom: 16px;
+        }
+        .post-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+        .post-subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .post-hero {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 40px 40px;
+        }
+        .post-hero img {
+            width: 100%;
+            border-radius: 8px;
+            display: block;
+        }
+
+        .post-body {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 40px 60px;
+        }
+        .post-body p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 24px;
+            color: var(--text);
+        }
+        .post-body h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin: 48px 0 20px;
+            letter-spacing: -0.3px;
+        }
+        .post-body h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 36px 0 16px;
+        }
+        .post-body blockquote {
+            border-left: 3px solid var(--accent);
+            padding-left: 24px;
+            margin: 32px 0;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        .post-body a {
+            color: var(--text);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+        .post-body a:hover {
+            color: var(--text-secondary);
+        }
+        .post-body .video-embed {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 32px 0;
+            border-radius: 8px;
+            background: #000;
+        }
+        .post-body .video-embed iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: 0;
+        }
+        .post-body figure {
+            margin: 32px 0;
+        }
+        .post-body figure img {
+            width: 100%;
+            border-radius: 8px;
+            display: block;
+        }
+        .post-body figcaption {
+            font-size: 13px;
+            color: var(--text-tertiary);
+            margin-top: 12px;
+            text-align: center;
+        }
+
+        .post-share {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 32px 40px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .post-share span {
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: var(--text-tertiary);
+        }
+        .post-share a {
+            font-size: 13px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 6px 14px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+        .post-share a:hover { background: var(--bg-card); color: var(--text); }
+
+        .post-author {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 40px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .post-author img {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .post-author-name {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+        .post-author-bio {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+        .post-author-bio a {
+            color: var(--text);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid var(--border);
+            font-size: 12px;
+            color: var(--text-tertiary);
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 16px 24px; }
+            .nav-links { display: none; position: fixed; top: 60px; left: 0; right: 0; background: rgba(255,255,255,0.98); flex-direction: column; padding: 24px; gap: 16px; border-bottom: 1px solid var(--border); }
+            .nav-links.open { display: flex; }
+            .nav-toggle { display: block; }
+            .post-header { padding: 120px 24px 32px; }
+            .post-title { font-size: 32px; }
+            .post-hero { padding: 0 24px 32px; }
+            .post-body { padding: 0 24px 48px; }
+            .post-share, .post-author { padding-left: 24px; padding-right: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="nav-name">Aaron Edwards</a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+        <ul class="nav-links">
+            <li><a href="/#expertise">Expertise</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a href="/#speaking">Speaking</a></li>
+            <li><a href="/insights/" class="active">Insights</a></li>
+            <li><a href="/#contact" class="nav-cta">Get in Touch</a></li>
+        </ul>
+    </nav>
+
+    <div class="post-header">
+        <a href="/insights/" class="post-back">&larr; Back to Insights</a>
+        <div class="post-meta">May 1, 2026 &middot; 9 min read</div>
+        <h1 class="post-title">4 Months Down the AI Engineering Hole</h1>
+        <p class="post-subtitle">Four months building agents and infrastructure full-time. Three phases, one I'm still in, and what it does to a business when you take it apart and put it back together while it's still trading.</p>
+    </div>
+
+    <div class="post-hero">
+        <img src="ai-engineering-journey.svg" alt="The 4-month curve: Fantastical Era, AI Whisperer, Big Reset" loading="lazy">
+    </div>
+
+    <div class="post-body">
+        <p>I went dark on Jan 13th when I went all in on Openclaw and got sucked down the AI engineering hole.</p>
+
+        <p>Four months in I can roughly map it into three phases. The first two were a blast. The third one is where I actually live now and it isn't a blast, it's necessary.</p>
+
+        <p>The shape of it looks roughly like the curve above.</p>
+
+        <h2>Phase 1: The Fantastical Era</h2>
+
+        <p>Terminal open, half understanding the commands I was typing, watching things work and getting an absolutely unreasonable hit off it.</p>
+
+        <p>I wasn't building from a plan. I didn't have a plan. I didn't know what a plan in this context even looked like. I was designing on the fly, gluing libraries together, copy-pasting from Stack Overflow and ChatGPT and Claude and praying. Building tools that did nonsensical things because the act of building was the point. Stacking circular logic on top of circular logic until I'd accidentally edit a config file I shouldn't have touched and the whole setup went offline.</p>
+
+        <p>Six hours fixing it and I felt like a god when I did.</p>
+
+        <p>My version of this was a Sunday night in late January. I had Edwardo, the first agent, running on a Mac Mini in the office over Tailscale, with Telegram as the control interface, and a launch agent I'd been editing live for two weeks. Made one change too many. The daemon stopped firing. Edwardo went silent for about four hours. When the first new message finally came through I punched the air at my desk like I'd just won something. I had no real idea why it had broken and no real idea why my fix had worked. Both still felt like a win.</p>
+
+        <p>This phase is pure addiction. I wasn't learning frameworks, I was learning that I could actually do this. The gap between "this is for other people" and "I just shipped a thing" is the most expensive lesson I'll ever pay zero dollars for. It changes how you think about what's possible to build alone, and once it changes you don't really go back.</p>
+
+        <p>It also lies to you. Hard. Almost nothing I built in this phase was real. It demoed. It wouldn't have survived a second user, a stale token, or a Tuesday.</p>
+
+        <h2>Phase 2: The AI Whisperer</h2>
+
+        <p>By now I'd built something. Maybe four somethings. I had opinions. I'd read a paper. I thought I'd seen the matrix.</p>
+
+        <p>So I told everyone. Cornered people at dinner. Explained agentic loops to friends who came round for a drink. Started sentences with "the thing about RAG is" like anyone had asked. Had a TED talk in my head and was delivering it whether the audience consented or not. This phase is genuinely irritating to be around and I'm sorry to everyone who lived through it with me.</p>
+
+        <p>It ended the moment I stopped talking and started listening.</p>
+
+        <p>I watched videos on harness engineering. Read Latent Space posts. Read Anthropic's piece on building effective agents. Realised the people who actually ship production AI are talking about evals, traces, structured outputs, orchestration patterns, and I didn't really understand any of it at depth. I'd thought I was 70% of the way there. I was about 4%.</p>
+
+        <p>The quietest version of it was going back to something I'd built three weeks earlier, reading the code, and not being able to defend a single architectural decision. The whole thing was held together with hope.</p>
+
+        <p>The version that actually broke me was the Telegram bot conflict. I had two daemons on the Mac Mini both running getUpdates against the same bot token. I'd installed the second one three weeks earlier, forgotten about it, and they'd been quietly fighting each other for incoming messages ever since. Some commands landed, some didn't, in no pattern I could see. Spent the better part of an afternoon chasing it through logs before I found the orphan launch agent. The fix in the end was to revoke the token and start over. The lesson sat with me longer than the fix did. I'd been running infrastructure I couldn't have drawn from memory and that's not infrastructure, that's luck.</p>
+
+        <p>The talk that snapped me out of Phase 2 is below. Karpathy lays out why this paradigm is actually different and what it means to build on top of it. If you only watch one thing while you're stuck in this phase, watch this one. It reframed almost everything I thought I was doing.</p>
+
+        <div class="video-embed">
+            <iframe src="https://www.youtube.com/embed/LCEmiRjPEtQ?rel=0&modestbranding=1" title="Andrej Karpathy: Software Is Changing (Again)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <blockquote>Andrej Karpathy, <em>Software Is Changing (Again)</em>, YC AI Startup School, June 2025. <a href="https://www.youtube.com/watch?v=LCEmiRjPEtQ" target="_blank" rel="noopener">Watch on YouTube</a>.</blockquote>
+
+        <h2>Phase 3: The Big Reset (where I currently am)</h2>
+
+        <p>Building doesn't give me the rush anymore.</p>
+
+        <p>I'm in spec docs. I'm arguing with Claude Code about whether my regex actually catches the edge case I think it catches. I'm standing up local instances because I've finally clocked that uploading every internal email, every client P&amp;L, every personal note to a third party cloud is a decision, not a default. Thinking about data sovereignty and what a Gatekeeper layer should actually do before any payload leaves the machine. Running local Gemma on a Mac Mini as the redaction layer not because it's clever but because it's the only honest way to keep raw client data out of someone else's training set.</p>
+
+        <p>I read the news differently now. The "60% of white collar work evaporates in the next 12 to 24 months" line stopped sounding like clickbait and started sounding like a forecast I'm personally exposed to. I've stopped arguing with whether it's true and started asking whether we'd still be employable on the other side of it.</p>
+
+        <p>So we're doing the only sane thing. Going back through the entire business. Every workflow. Every approval. Every human-in-the-loop decision. Asking which of these actually needs a human and which exists because that's how we've always done it. Sitting with the answers, which are uncomfortable.</p>
+
+        <p>We're rebuilding the company while running the company. Trying not to lose our hair while operating the day to day. I'm having to explain to the team that this isn't about replacing people, it's about not getting replaced as a company. Some of them get it. Some don't. That gap matters.</p>
+
+        <p>This is the awakening era. Least exciting of the three phases and the only one that counts.</p>
+
+        <p>I've stopped wanting to build in public and started wanting to build properly. Stopped reaching for new tools and started staying with the boring ones long enough to actually understand them. Stopped thinking about the demo and started thinking about the failure mode when the demo runs in production at 3am on a Tuesday with a real client on the other end.</p>
+
+        <p>If we don't move fast and move well we're dead in the water.</p>
+
+        <p>The clearest example of this for me was the CrewAI pivot. Three weeks before writing this I was deep in CrewAI. Six named agents, a multi-agent orchestration layer, a whole choreography I'd specced out over a weekend and was genuinely excited about. Then I sat with the spec and asked, for each agent, what it was actually doing that one well-prompted Edwardo couldn't. Honest answer for most of them was nothing. So I tore the framework out. Went back to a single agent on a multi-provider cloud router with local Gemma sitting in front as the redaction layer, so the raw stuff never leaves the machine. Build got smaller. Team got more confused. System got more honest.</p>
+
+        <h2>Closing</h2>
+
+        <p>That's where I am four months in.</p>
+
+        <p>I'll keep documenting it as it happens. Where I'm landing on data sovereignty. The local agent stack. What's actually working in production versus what just looked good in a demo. What it does to a business when you take it apart and put it back together while it's still trading.</p>
+
+        <p>That's it for now.</p>
+    </div>
+
+    <div class="post-share">
+        <span>Share</span>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://aaroncharlesedwards.com/insights/4-months-down-the-ai-engineering-hole/" target="_blank">LinkedIn</a>
+        <a href="https://twitter.com/intent/tweet?url=https://aaroncharlesedwards.com/insights/4-months-down-the-ai-engineering-hole/&text=4%20Months%20Down%20the%20AI%20Engineering%20Hole" target="_blank">X</a>
+        <a href="mailto:?subject=4%20Months%20Down%20the%20AI%20Engineering%20Hole&body=https://aaroncharlesedwards.com/insights/4-months-down-the-ai-engineering-hole/" target="_blank">Email</a>
+    </div>
+
+    <div class="post-author">
+        <img src="/aaron-headshot.jpg" alt="Aaron Edwards">
+        <div>
+            <div class="post-author-name">Aaron Edwards</div>
+            <div class="post-author-bio">Founder &amp; CEO, The Charles Group. Forbes 30 Under 30 nominee. Five-time Inc. 5000. <a href="/#press">View press coverage &rarr;</a></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Aaron Edwards. All rights reserved.</p>
+    </footer>
+</body>
+</html>
