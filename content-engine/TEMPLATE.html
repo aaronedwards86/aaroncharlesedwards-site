@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<!--
+  ARTICLE TEMPLATE — copy to insights/{{SLUG}}/index.html and replace every {{TOKEN}}.
+  Tokens:
+    {{TITLE_TAG}}              e.g. "The Sibling System: 15 Years Building The Charles | Aaron Edwards" (< 70 chars)
+    {{META_DESCRIPTION}}       150-160 chars, plain prose, no quotes
+    {{SLUG}}                   kebab-case directory name
+    {{HEADLINE}}               full article headline (H1 + JSON-LD)
+    {{SUBTITLE}}               1-3 sentence dek
+    {{ISO_DATE}}               YYYY-MM-DD
+    {{DISPLAY_DATE}}           e.g. "July 16, 2026"
+    {{READ_MIN}}               round(words/200)
+    {{JSONLD_DESCRIPTION}}     1-2 sentence description; include "Aaron Edwards" + a key SEO phrase; no double quotes
+    {{FAQ1_Q}} {{FAQ1_A}} ... {{FAQ3_Q}} {{FAQ3_A}}   FAQ pairs; answers 2-4 sentences, NO double quotes (shared by JSON-LD and HTML)
+    {{HERO_IMG_SRC}}           hero.jpg or <name>.svg in the article directory
+    {{HERO_ALT}}               descriptive alt text
+    {{BODY_HTML}}              article body: <p>, <h2>, <h3>, <blockquote>, <a> only
+    {{SHARE_TITLE_ENCODED}}    URL-encoded headline for the X share link
+    {{EMAIL_SUBJECT_ENCODED}}  URL-encoded short title for the mailto link
+  After filling: grep for "{{" — zero matches allowed.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TITLE_TAG}}</title>
+    <meta name="description" content="{{META_DESCRIPTION}}">
+
+    <link rel="canonical" href="https://aaroncharlesedwards.com/insights/{{SLUG}}/">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{{TITLE_TAG}}">
+    <meta property="og:description" content="{{META_DESCRIPTION}}">
+    <meta property="og:url" content="https://aaroncharlesedwards.com/insights/{{SLUG}}/">
+    <meta property="og:image" content="https://aaroncharlesedwards.com/aaron-headshot.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Aaron Edwards">
+    <meta property="og:locale" content="en_US">
+    <meta property="article:author" content="Aaron Edwards">
+    <meta property="article:published_time" content="{{ISO_DATE}}">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{TITLE_TAG}}">
+    <meta name="twitter:description" content="{{META_DESCRIPTION}}">
+    <meta name="twitter:image" content="https://aaroncharlesedwards.com/aaron-headshot.jpg">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "{{HEADLINE}}",
+        "author": {
+            "@type": "Person",
+            "name": "Aaron Edwards",
+            "url": "https://aaroncharlesedwards.com"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "Aaron Edwards",
+            "url": "https://aaroncharlesedwards.com"
+        },
+        "datePublished": "{{ISO_DATE}}",
+        "dateModified": "{{ISO_DATE}}",
+        "description": "{{JSONLD_DESCRIPTION}}",
+        "image": "https://aaroncharlesedwards.com/aaron-headshot.jpg",
+        "mainEntityOfPage": "https://aaroncharlesedwards.com/insights/{{SLUG}}/"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://aaroncharlesedwards.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Insights",
+                "item": "https://aaroncharlesedwards.com/insights/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "{{HEADLINE}}",
+                "item": "https://aaroncharlesedwards.com/insights/{{SLUG}}/"
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "{{FAQ1_Q}}",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "{{FAQ1_A}}"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "{{FAQ2_Q}}",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "{{FAQ2_A}}"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "{{FAQ3_Q}}",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "{{FAQ3_A}}"
+                }
+            }
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #ffffff;
+            --bg-elevated: #f8f8fa;
+            --bg-card: #f4f4f6;
+            --text: #111111;
+            --text-secondary: #555555;
+            --text-tertiary: #999999;
+            --accent: #111111;
+            --accent-dim: rgba(0, 0, 0, 0.05);
+            --border: rgba(0, 0, 0, 0.08);
+            --max-width: 1200px;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            padding: 20px 40px;
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-name { font-size: 14px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--text); text-decoration: none; }
+        .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 13px; font-weight: 400; letter-spacing: 0.5px; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--text); }
+        .nav-links a.active { color: var(--text); font-weight: 500; }
+        .nav-cta { background: var(--accent) !important; color: #ffffff !important; padding: 10px 24px; border-radius: 4px; font-weight: 500 !important; }
+        .nav-toggle { display: none; background: none; border: none; color: var(--text); font-size: 24px; cursor: pointer; }
+
+        .post-header {
+            padding: 140px 40px 40px;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+        .post-back {
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 32px;
+        }
+        .post-back:hover { color: var(--text); }
+        .post-meta {
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-tertiary);
+            margin-bottom: 16px;
+        }
+        .post-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+        .post-subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .post-hero {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 40px 40px;
+        }
+        .post-hero img {
+            width: 100%;
+            border-radius: 8px;
+            display: block;
+        }
+
+        .post-body {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 40px 60px;
+        }
+        .post-body p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 24px;
+            color: var(--text);
+        }
+        .post-body h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin: 48px 0 20px;
+            letter-spacing: -0.3px;
+        }
+        .post-body h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 36px 0 16px;
+        }
+        .post-body blockquote {
+            border-left: 3px solid var(--accent);
+            padding-left: 24px;
+            margin: 32px 0;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        .post-body a {
+            color: var(--text);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+        .post-body a:hover {
+            color: var(--text-secondary);
+        }
+
+        .faq-section {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 40px 60px;
+            border-top: 1px solid var(--border);
+            padding-top: 40px;
+        }
+        .faq-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            letter-spacing: -0.3px;
+        }
+        .faq-item {
+            margin-bottom: 28px;
+        }
+        .faq-item h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .faq-item p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        .post-share {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 32px 40px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .post-share span {
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: var(--text-tertiary);
+        }
+        .post-share a {
+            font-size: 13px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 6px 14px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+        .post-share a:hover { background: var(--bg-card); color: var(--text); }
+
+        .post-author {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 40px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .post-author img {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .post-author-name {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+        .post-author-bio {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+        .post-author-bio a {
+            color: var(--text);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid var(--border);
+            font-size: 12px;
+            color: var(--text-tertiary);
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 16px 24px; }
+            .nav-links { display: none; position: fixed; top: 60px; left: 0; right: 0; background: rgba(255,255,255,0.98); flex-direction: column; padding: 24px; gap: 16px; border-bottom: 1px solid var(--border); }
+            .nav-links.open { display: flex; }
+            .nav-toggle { display: block; }
+            .post-header { padding: 120px 24px 32px; }
+            .post-title { font-size: 32px; }
+            .post-hero { padding: 0 24px 32px; }
+            .post-body { padding: 0 24px 48px; }
+            .faq-section { padding: 32px 24px 48px; }
+            .post-share, .post-author { padding-left: 24px; padding-right: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="nav-name">Aaron Edwards</a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+        <ul class="nav-links">
+            <li><a href="/#expertise">Expertise</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a href="/#speaking">Speaking</a></li>
+            <li><a href="/insights/" class="active">Insights</a></li>
+            <li><a href="/#contact" class="nav-cta">Get in Touch</a></li>
+        </ul>
+    </nav>
+
+    <div class="post-header">
+        <a href="/insights/" class="post-back">&larr; Back to Insights</a>
+        <div class="post-meta">{{DISPLAY_DATE}} &middot; {{READ_MIN}} min read</div>
+        <h1 class="post-title">{{HEADLINE}}</h1>
+        <p class="post-subtitle">{{SUBTITLE}}</p>
+    </div>
+
+    <div class="post-hero">
+        <img src="{{HERO_IMG_SRC}}" alt="{{HERO_ALT}}" loading="lazy">
+    </div>
+
+    <div class="post-body">
+{{BODY_HTML}}
+    </div>
+
+    <div class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <h3>{{FAQ1_Q}}</h3>
+            <p>{{FAQ1_A}}</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>{{FAQ2_Q}}</h3>
+            <p>{{FAQ2_A}}</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>{{FAQ3_Q}}</h3>
+            <p>{{FAQ3_A}}</p>
+        </div>
+    </div>
+
+    <div class="post-share">
+        <span>Share</span>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://aaroncharlesedwards.com/insights/{{SLUG}}/" target="_blank">LinkedIn</a>
+        <a href="https://twitter.com/intent/tweet?url=https://aaroncharlesedwards.com/insights/{{SLUG}}/&text={{SHARE_TITLE_ENCODED}}" target="_blank">X</a>
+        <a href="mailto:?subject={{EMAIL_SUBJECT_ENCODED}}&body=https://aaroncharlesedwards.com/insights/{{SLUG}}/" target="_blank">Email</a>
+    </div>
+
+    <div class="post-author">
+        <img src="/aaron-headshot.jpg" alt="Aaron Edwards">
+        <div>
+            <div class="post-author-name">Aaron Edwards</div>
+            <div class="post-author-bio">Founder &amp; CEO, The Charles Group. Forbes 30 Under 30 nominee. Five-time Inc. 5000. <a href="/#press">View press coverage &rarr;</a></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Aaron Edwards. All rights reserved.</p>
+    </footer>
+</body>
+</html>

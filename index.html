@@ -169,6 +169,33 @@
         },
         {
             "@context": "https://schema.org",
+            "@type": "NewsArticle",
+            "headline": "The Sibling System Behind The Charles Group's 15-Year Success",
+            "publisher": {"@type": "Organization", "name": "Founder Brew", "url": "https://www.founderbrew.com"},
+            "url": "https://www.founderbrew.com/stories/the-sibling-system-behind-the-charles-groups-15-year-success",
+            "datePublished": "2026-07",
+            "about": {"@type": "Organization", "name": "The Charles Group"}
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "PodcastEpisode",
+            "name": "Aaron Edwards, co-founder of The Charles Group",
+            "partOfSeries": {"@type": "PodcastSeries", "name": "Legends N Leaders"},
+            "url": "https://podcasts.apple.com/us/podcast/legends-n-leaders/id1696212935",
+            "datePublished": "2026",
+            "about": {"@type": "Person", "name": "Aaron Edwards"}
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "Clip",
+            "name": "SoDA Series LIVE with Aaron Edwards and Samantha Edwards of The Charles",
+            "url": "https://www.youtube.com/watch?v=0tbM4oUjYBw",
+            "datePublished": "2020-11-17",
+            "about": {"@type": "Person", "name": "Aaron Edwards"},
+            "isPartOf": {"@type": "CreativeWorkSeries", "name": "SoDA Series LIVE"}
+        },
+        {
+            "@context": "https://schema.org",
             "@type": "PodcastEpisode",
             "name": "Aaron and Samantha Edwards, founders of The Charles Group",
             "partOfSeries": {"@type": "PodcastSeries", "name": "The Ad Podcast"},
@@ -214,9 +241,9 @@
         {
             "@context": "https://schema.org",
             "@type": "Clip",
-            "name": "Super Bowl LVII Ad Review: NY1 Spectrum News",
+            "name": "Super Bowl LX Ad Review: NY1 Spectrum News",
             "url": "https://youtu.be/dI1q3pCA534",
-            "datePublished": "2023",
+            "datePublished": "2026-02",
             "about": {"@type": "Person", "name": "Aaron Edwards"},
             "isPartOf": {"@type": "BroadcastService", "name": "NY1 Spectrum News"}
         }
@@ -1212,6 +1239,108 @@
 
         .press-tv-card:hover .press-arrow { color: var(--text); }
 
+        /* Press card media — thumbnails light up when files exist in /images/press/ */
+        .press-hero-media { width: 100%; }
+        .press-hero-media img {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            border-radius: 5px;
+            display: block;
+        }
+
+        /* TV & Video inline players */
+        .tv-facade {
+            position: relative;
+            display: block;
+            width: 100%;
+            padding: 0;
+            border: 0;
+            background: #000;
+            border-radius: 6px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .tv-facade img {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            display: block;
+            opacity: 0.92;
+            transition: opacity 0.2s;
+        }
+        .tv-facade:hover img { opacity: 1; }
+        .tv-play {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 56px; height: 56px;
+            border-radius: 50%;
+            background: rgba(17,17,17,0.82);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 17px;
+            padding-left: 4px;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .tv-facade:hover .tv-play {
+            background: rgba(17,17,17,0.95);
+            transform: translate(-50%, -50%) scale(1.06);
+        }
+        .tv-embed {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 6px;
+            overflow: hidden;
+            background: #000;
+        }
+        .tv-embed iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .tv-still { width: 100%; }
+        .tv-still img {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            border-radius: 6px;
+            display: block;
+        }
+        .tv-still-fallback { display: none; }
+        .tv-still.is-fallback .tv-still-fallback {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #111111;
+            border-radius: 6px;
+        }
+        .tv-still-brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #ffffff;
+        }
+        .tv-still-cta {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+        }
+        .press-tv-card:hover .tv-still-cta { color: rgba(255,255,255,0.85); }
+
         /* Podcast compact list */
         .podcast-list {
             display: flex;
@@ -1687,6 +1816,7 @@
         <!-- Hero Press Highlights -->
         <div class="press-hero-grid">
             <a href="https://www.forbes.com/profile/aaron-edwards/" target="_blank" rel="noopener" class="press-hero-card">
+                <div class="press-hero-media"><img src="/images/press/forbes.jpg" alt="Forbes 30 Under 30 feature on Aaron Edwards" onerror="this.parentElement.remove()"></div>
                 <div class="press-hero-pub">Forbes</div>
                 <div class="press-hero-headline">30 Under 30 Nominee</div>
                 <div class="press-hero-meta">
@@ -1695,6 +1825,7 @@
                 </div>
             </a>
             <a href="https://lbbonline.com/news/the-charles-group-meet-the-agency-sparking-growth-with-reinvention" target="_blank" rel="noopener" class="press-hero-card">
+                <div class="press-hero-media"><img src="/images/press/lbb-reinvention.jpg" alt="LBB Online feature: The Charles Group, sparking growth with reinvention" onerror="this.parentElement.remove()"></div>
                 <div class="press-hero-pub">LBB Online</div>
                 <div class="press-hero-headline">The Charles Group: Sparking Growth with Reinvention</div>
                 <div class="press-hero-meta">
@@ -1702,15 +1833,17 @@
                     <span class="press-hero-arrow">↗</span>
                 </div>
             </a>
-            <a href="https://www.ispot.tv/ad/I99Y/2019-jaguar-f-pace-the-new-faces-of-jaguar-t2" target="_blank" rel="noopener" class="press-hero-card">
-                <div class="press-hero-pub">Jaguar: National TV Campaign</div>
-                <div class="press-hero-headline">F-PACE: The New Faces of Jaguar</div>
+            <a href="https://www.founderbrew.com/stories/the-sibling-system-behind-the-charles-groups-15-year-success" target="_blank" rel="noopener" class="press-hero-card">
+                <div class="press-hero-media"><img src="/images/press/founderbrew.jpg" alt="Founder Brew story: The Sibling System Behind The Charles Group's 15-Year Success" onerror="this.parentElement.remove()"></div>
+                <div class="press-hero-pub">Founder Brew</div>
+                <div class="press-hero-headline">The Sibling System Behind The Charles Group's 15-Year Success</div>
                 <div class="press-hero-meta">
-                    <span class="press-hero-year">2019–2020</span>
+                    <span class="press-hero-year">Jul 2026</span>
                     <span class="press-hero-arrow">↗</span>
                 </div>
             </a>
             <a href="https://www.dandad.org/" target="_blank" rel="noopener" class="press-hero-card">
+                <div class="press-hero-media"><img src="/images/press/cocainenomics.jpg" alt="Cocainenomics — WSJ and Netflix branded editorial campaign by The Charles Group" onerror="this.parentElement.remove()"></div>
                 <div class="press-hero-pub">D&AD / Webby Awards</div>
                 <div class="press-hero-headline">Cocainenomics: WSJ × Netflix branded editorial campaign</div>
                 <div class="press-hero-meta">
@@ -1723,6 +1856,7 @@
         <!-- Publication Logo Bar -->
         <div class="press-logo-bar">
             <span class="press-logo-item">Forbes</span>
+            <span class="press-logo-item">Founder Brew</span>
             <span class="press-logo-item">Campaign US</span>
             <span class="press-logo-item">LBB Online</span>
             <span class="press-logo-item">Design Milk</span>
@@ -1736,15 +1870,25 @@
         <div class="press-category">
             <div class="press-category-label">TV & Video</div>
             <div class="press-tv-grid">
-                <a href="https://youtu.be/dI1q3pCA534" target="_blank" rel="noopener" class="press-tv-card">
+                <div class="press-tv-card">
+                    <button class="tv-facade" data-embed="https://www.youtube-nocookie.com/embed/dI1q3pCA534?rel=0&amp;modestbranding=1&amp;autoplay=1" aria-label="Play: NY1 Spectrum News Super Bowl ad review with Aaron Edwards">
+                        <img src="/ny1-poster.png" alt="Aaron Edwards on NY1 Spectrum News reviewing Super Bowl advertising" loading="lazy">
+                        <span class="tv-play" aria-hidden="true">&#9654;</span>
+                    </button>
                     <div class="press-tv-network">NY1 Spectrum News</div>
-                    <div class="press-tv-title">Super Bowl LVII: Ad Review &amp; Analysis</div>
+                    <div class="press-tv-title">Super Bowl LX: Ad Review &amp; Analysis</div>
                     <div class="press-tv-meta">
-                        <span class="press-year">2023</span>
-                        <span class="press-arrow">↗</span>
+                        <span class="press-year">Feb 2026</span>
                     </div>
-                </a>
+                </div>
                 <a href="https://www.ispot.tv/ad/I99Y/2019-jaguar-f-pace-the-new-faces-of-jaguar-t2" target="_blank" rel="noopener" class="press-tv-card">
+                    <div class="tv-still">
+                        <img src="/images/press/jaguar-fpace.jpg" alt="Still from the Jaguar F-PACE campaign, The New Faces of Jaguar" onerror="this.closest('.tv-still').classList.add('is-fallback'); this.remove()">
+                        <div class="tv-still-fallback" aria-hidden="true">
+                            <span class="tv-still-brand">Jaguar F&#8209;PACE</span>
+                            <span class="tv-still-cta">Watch the spot on iSpot.tv &#8599;</span>
+                        </div>
+                    </div>
                     <div class="press-tv-network">Jaguar: National TV Campaign</div>
                     <div class="press-tv-title">F-PACE: The New Faces of Jaguar</div>
                     <div class="press-tv-meta">
@@ -1752,6 +1896,17 @@
                         <span class="press-arrow">↗</span>
                     </div>
                 </a>
+                <div class="press-tv-card">
+                    <button class="tv-facade" data-embed="https://www.youtube-nocookie.com/embed/0tbM4oUjYBw?rel=0&amp;modestbranding=1&amp;autoplay=1" aria-label="Play: SoDA Series LIVE with Aaron and Samantha Edwards of The Charles">
+                        <img src="https://i.ytimg.com/vi/0tbM4oUjYBw/hqdefault.jpg" alt="SoDA Series LIVE interview with Aaron and Samantha Edwards of The Charles" loading="lazy">
+                        <span class="tv-play" aria-hidden="true">&#9654;</span>
+                    </button>
+                    <div class="press-tv-network">SoDA &middot; Society of Digital Agencies</div>
+                    <div class="press-tv-title">SoDA Series LIVE with Aaron &amp; Samantha Edwards of The Charles</div>
+                    <div class="press-tv-meta">
+                        <span class="press-year">Nov 2020</span>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -1759,6 +1914,13 @@
         <div class="press-category">
             <div class="press-category-label">Podcasts</div>
             <div class="podcast-list">
+                <a href="https://podcasts.apple.com/us/podcast/legends-n-leaders/id1696212935" target="_blank" rel="noopener" class="podcast-item">
+                    <div class="podcast-show">Legends N Leaders with Ben Weiss</div>
+                    <span class="podcast-sep">·</span>
+                    <div class="podcast-episode">Aaron Edwards on luxury, branding, and the future of high-end business</div>
+                    <span class="podcast-year">2026</span>
+                    <span class="podcast-arrow">↗</span>
+                </a>
                 <a href="https://podcasts.apple.com/us/podcast/aaron-and-samantha-edwards-founders-the-charles-group/id1435092661?i=1000761864649" target="_blank" rel="noopener" class="podcast-item">
                     <div class="podcast-show">The Ad Podcast</div>
                     <span class="podcast-sep">·</span>
@@ -1908,6 +2070,21 @@
         }, { threshold: 0.1 });
 
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Click-to-play video facades (poster image swaps to iframe on demand)
+        document.querySelectorAll('.tv-facade').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const wrap = document.createElement('div');
+                wrap.className = 'tv-embed';
+                const frame = document.createElement('iframe');
+                frame.src = btn.dataset.embed;
+                frame.title = btn.getAttribute('aria-label');
+                frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+                frame.allowFullscreen = true;
+                wrap.appendChild(frame);
+                btn.replaceWith(wrap);
+            });
+        });
 
         // Nav scroll behavior - transparent on hero, solid after
         const nav = document.querySelector('nav');

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" font-family="Inter, system-ui, sans-serif">
+  <rect width="720" height="360" fill="#fafafa"/>
+  <text x="60" y="44" font-size="11" fill="#999" letter-spacing="1.5">THE SIBLING SYSTEM</text>
+  <text x="660" y="44" text-anchor="end" font-size="11" fill="#999" letter-spacing="1.5">EST. 2011</text>
+  <circle cx="285" cy="178" r="112" fill="#111" fill-opacity="0.04" stroke="#111" stroke-width="2"/>
+  <circle cx="435" cy="178" r="112" fill="#111" fill-opacity="0.04" stroke="#111" stroke-width="2"/>
+  <text x="230" y="172" text-anchor="middle" font-size="15" font-weight="600" fill="#111">Strategy</text>
+  <text x="230" y="194" text-anchor="middle" font-size="10" fill="#555" letter-spacing="1.5">AARON &#183; CEO</text>
+  <text x="490" y="172" text-anchor="middle" font-size="15" font-weight="600" fill="#111">Craft</text>
+  <text x="490" y="194" text-anchor="middle" font-size="10" fill="#555" letter-spacing="1.5">SAMANTHA &#183; CCO</text>
+  <text x="360" y="166" text-anchor="middle" font-size="11" font-weight="600" fill="#111" letter-spacing="1">THE</text>
+  <text x="360" y="184" text-anchor="middle" font-size="11" font-weight="600" fill="#111" letter-spacing="1">CHARLES</text>
+  <line x1="60" y1="330" x2="680" y2="330" stroke="#ccc" stroke-width="1"/>
+  <circle cx="60" cy="330" r="4" fill="#111"/>
+  <circle cx="680" cy="330" r="4" fill="#111"/>
+  <text x="60" y="352" font-size="11" fill="#555" letter-spacing="1.5">2011</text>
+  <text x="680" y="352" text-anchor="end" font-size="11" fill="#555" letter-spacing="1.5">2026 &#183; FIFTEEN YEARS</text>
+</svg>
