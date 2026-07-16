@@ -7,7 +7,6 @@ Newest published first. The `/new-insight` skill picks the top `ready` item unle
 
 | # | Working title | Pillar | Angle | State |
 |---|---|---|---|---|
-| 1 | The Client Concentration Rule | Marketing × Finance | Treat agency revenue like a portfolio: position sizing, the 30% dependency line, when to deliberately slow a growing account. Extends the Inc. 5000 piece one level deeper. | ready |
 | 2 | The Brief Is the Product | Brandformance & Strategy | Defining success at the brief stage is the whole Brandformance mechanism. What a brief must contain before a dollar is spent; why most agencies avoid the accountability. | ready |
 | 3 | What Luxury Brands Know About Saying No | Luxury & Culture | Exclusivity as a discipline of refusal: distribution, discounting, collaborations. Draws on Fortune 50 luxury client work; mines the "Luxury in the Age of Noise" speaking topic. | ready |
 | 4 | Hiring Behind the Business | Agency Leadership & Growth | The case against hiring ahead of demand. Utilization, morale, and why "hire when it's signed" outperformed every growth-hack alternative for 15 years. | idea |
@@ -20,6 +19,7 @@ Newest published first. The `/new-insight` skill picks the top `ready` item unle
 
 | Date | Title | Pillar | Path |
 |---|---|---|---|
+| 2026-07-16 | The Client Concentration Rule | Marketing × Finance | /insights/client-concentration-rule/ |
 | 2026-07-16 | The Sibling System | Partnership, People & Culture | /insights/the-sibling-system/ |
 | 2026-05-01 | 4 Months Down an AI Engineering Hole | AI & the Future of Agency Work | /insights/4-months-down-the-ai-engineering-hole/ |
 | 2026-03-10 | Five Times on the Inc. 5000 | Agency Leadership & Growth | /insights/five-times-inc-5000/ |
