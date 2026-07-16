@@ -76,6 +76,8 @@ Super Bowl advertising analysis (seasonal: February, ties to NY1 commentary).
 | NY1 — Super Bowl LVII segment | https://youtu.be/dI1q3pCA534 |
 | NY1 — Super Bowl LX segment | https://ny1.com/nyc/all-boroughs/CTV/2026/02/09/advertisers-pull-out-all-the-stops-for-super-bowl-lx |
 | The Ad Podcast — Aaron & Samantha (Apr 2026) | https://podcasts.apple.com/us/podcast/aaron-and-samantha-edwards-founders-the-charles-group/id1435092661?i=1000761864649 |
+| Legends N Leaders with Ben Weiss (2026) | https://podcasts.apple.com/us/podcast/legends-n-leaders/id1696212935 |
+| SoDA Series LIVE — Aaron & Samantha (Nov 2020) | https://www.youtube.com/watch?v=0tbM4oUjYBw |
 | Supply Chain Now podcast | https://supplychainnow.com/transforming-business-purpose-lwp97/ |
 | The Marketing Marriage podcast | https://open.spotify.com/episode/5wS2gd0pwzM5wcTlMzF8xN |
 | Brits in the Big Apple podcast | https://creators.spotify.com/pod/profile/britsinthebigapple/episodes/Aaron-Edwards--CEO-of-The-Charles-Group-e19lmpd |
