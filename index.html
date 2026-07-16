@@ -214,9 +214,9 @@
         {
             "@context": "https://schema.org",
             "@type": "Clip",
-            "name": "Super Bowl LVII Ad Review: NY1 Spectrum News",
+            "name": "Super Bowl LX Ad Review: NY1 Spectrum News",
             "url": "https://youtu.be/dI1q3pCA534",
-            "datePublished": "2023",
+            "datePublished": "2026-02",
             "about": {"@type": "Person", "name": "Aaron Edwards"},
             "isPartOf": {"@type": "BroadcastService", "name": "NY1 Spectrum News"}
         }
@@ -1212,6 +1212,80 @@
 
         .press-tv-card:hover .press-arrow { color: var(--text); }
 
+        /* Press card media — thumbnails light up when files exist in /images/press/ */
+        .press-hero-media { width: 100%; }
+        .press-hero-media img {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            border-radius: 5px;
+            display: block;
+        }
+
+        /* TV & Video inline players */
+        .tv-facade {
+            position: relative;
+            display: block;
+            width: 100%;
+            padding: 0;
+            border: 0;
+            background: #000;
+            border-radius: 6px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .tv-facade img {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            display: block;
+            opacity: 0.92;
+            transition: opacity 0.2s;
+        }
+        .tv-facade:hover img { opacity: 1; }
+        .tv-play {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 56px; height: 56px;
+            border-radius: 50%;
+            background: rgba(17,17,17,0.82);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 17px;
+            padding-left: 4px;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .tv-facade:hover .tv-play {
+            background: rgba(17,17,17,0.95);
+            transform: translate(-50%, -50%) scale(1.06);
+        }
+        .tv-embed {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 6px;
+            overflow: hidden;
+            background: #000;
+        }
+        .tv-embed iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .tv-still { width: 100%; }
+        .tv-still img {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            border-radius: 6px;
+            display: block;
+        }
+
         /* Podcast compact list */
         .podcast-list {
             display: flex;
@@ -1687,6 +1761,7 @@
         <!-- Hero Press Highlights -->
         <div class="press-hero-grid">
             <a href="https://www.forbes.com/profile/aaron-edwards/" target="_blank" rel="noopener" class="press-hero-card">
+                <div class="press-hero-media"><img src="/images/press/forbes.jpg" alt="Forbes 30 Under 30 feature on Aaron Edwards" loading="lazy" onerror="this.parentElement.remove()"></div>
                 <div class="press-hero-pub">Forbes</div>
                 <div class="press-hero-headline">30 Under 30 Nominee</div>
                 <div class="press-hero-meta">
@@ -1695,6 +1770,7 @@
                 </div>
             </a>
             <a href="https://lbbonline.com/news/the-charles-group-meet-the-agency-sparking-growth-with-reinvention" target="_blank" rel="noopener" class="press-hero-card">
+                <div class="press-hero-media"><img src="/images/press/lbb-reinvention.jpg" alt="LBB Online feature: The Charles Group, sparking growth with reinvention" loading="lazy" onerror="this.parentElement.remove()"></div>
                 <div class="press-hero-pub">LBB Online</div>
                 <div class="press-hero-headline">The Charles Group: Sparking Growth with Reinvention</div>
                 <div class="press-hero-meta">
@@ -1703,6 +1779,7 @@
                 </div>
             </a>
             <a href="https://www.founderbrew.com/stories/the-sibling-system-behind-the-charles-groups-15-year-success" target="_blank" rel="noopener" class="press-hero-card">
+                <div class="press-hero-media"><img src="/images/press/founderbrew.jpg" alt="Founder Brew story: The Sibling System Behind The Charles Group's 15-Year Success" loading="lazy" onerror="this.parentElement.remove()"></div>
                 <div class="press-hero-pub">Founder Brew</div>
                 <div class="press-hero-headline">The Sibling System Behind The Charles Group's 15-Year Success</div>
                 <div class="press-hero-meta">
@@ -1711,6 +1788,7 @@
                 </div>
             </a>
             <a href="https://www.dandad.org/" target="_blank" rel="noopener" class="press-hero-card">
+                <div class="press-hero-media"><img src="/images/press/cocainenomics.jpg" alt="Cocainenomics — WSJ and Netflix branded editorial campaign by The Charles Group" loading="lazy" onerror="this.parentElement.remove()"></div>
                 <div class="press-hero-pub">D&AD / Webby Awards</div>
                 <div class="press-hero-headline">Cocainenomics: WSJ × Netflix branded editorial campaign</div>
                 <div class="press-hero-meta">
@@ -1737,15 +1815,19 @@
         <div class="press-category">
             <div class="press-category-label">TV & Video</div>
             <div class="press-tv-grid">
-                <a href="https://youtu.be/dI1q3pCA534" target="_blank" rel="noopener" class="press-tv-card">
+                <div class="press-tv-card">
+                    <button class="tv-facade" data-embed="https://www.youtube-nocookie.com/embed/dI1q3pCA534?rel=0&amp;modestbranding=1&amp;autoplay=1" aria-label="Play: NY1 Spectrum News Super Bowl ad review with Aaron Edwards">
+                        <img src="/ny1-poster.png" alt="Aaron Edwards on NY1 Spectrum News reviewing Super Bowl advertising" loading="lazy">
+                        <span class="tv-play" aria-hidden="true">&#9654;</span>
+                    </button>
                     <div class="press-tv-network">NY1 Spectrum News</div>
-                    <div class="press-tv-title">Super Bowl LVII: Ad Review &amp; Analysis</div>
+                    <div class="press-tv-title">Super Bowl LX: Ad Review &amp; Analysis</div>
                     <div class="press-tv-meta">
-                        <span class="press-year">2023</span>
-                        <span class="press-arrow">↗</span>
+                        <span class="press-year">Feb 2026</span>
                     </div>
-                </a>
+                </div>
                 <a href="https://www.ispot.tv/ad/I99Y/2019-jaguar-f-pace-the-new-faces-of-jaguar-t2" target="_blank" rel="noopener" class="press-tv-card">
+                    <div class="tv-still"><img src="/images/press/jaguar-fpace.jpg" alt="Still from the Jaguar F-PACE campaign, The New Faces of Jaguar" loading="lazy" onerror="this.parentElement.remove()"></div>
                     <div class="press-tv-network">Jaguar: National TV Campaign</div>
                     <div class="press-tv-title">F-PACE: The New Faces of Jaguar</div>
                     <div class="press-tv-meta">
@@ -1909,6 +1991,21 @@
         }, { threshold: 0.1 });
 
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Click-to-play video facades (poster image swaps to iframe on demand)
+        document.querySelectorAll('.tv-facade').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const wrap = document.createElement('div');
+                wrap.className = 'tv-embed';
+                const frame = document.createElement('iframe');
+                frame.src = btn.dataset.embed;
+                frame.title = btn.getAttribute('aria-label');
+                frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+                frame.allowFullscreen = true;
+                wrap.appendChild(frame);
+                btn.replaceWith(wrap);
+            });
+        });
 
         // Nav scroll behavior - transparent on hero, solid after
         const nav = document.querySelector('nav');
