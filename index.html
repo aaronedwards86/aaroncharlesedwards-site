@@ -1285,6 +1285,34 @@
             border-radius: 6px;
             display: block;
         }
+        .tv-still-fallback { display: none; }
+        .tv-still.is-fallback .tv-still-fallback {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #111111;
+            border-radius: 6px;
+        }
+        .tv-still-brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #ffffff;
+        }
+        .tv-still-cta {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+        }
+        .press-tv-card:hover .tv-still-cta { color: rgba(255,255,255,0.85); }
 
         /* Podcast compact list */
         .podcast-list {
@@ -1761,7 +1789,7 @@
         <!-- Hero Press Highlights -->
         <div class="press-hero-grid">
             <a href="https://www.forbes.com/profile/aaron-edwards/" target="_blank" rel="noopener" class="press-hero-card">
-                <div class="press-hero-media"><img src="/images/press/forbes.jpg" alt="Forbes 30 Under 30 feature on Aaron Edwards" loading="lazy" onerror="this.parentElement.remove()"></div>
+                <div class="press-hero-media"><img src="/images/press/forbes.jpg" alt="Forbes 30 Under 30 feature on Aaron Edwards" onerror="this.parentElement.remove()"></div>
                 <div class="press-hero-pub">Forbes</div>
                 <div class="press-hero-headline">30 Under 30 Nominee</div>
                 <div class="press-hero-meta">
@@ -1770,7 +1798,7 @@
                 </div>
             </a>
             <a href="https://lbbonline.com/news/the-charles-group-meet-the-agency-sparking-growth-with-reinvention" target="_blank" rel="noopener" class="press-hero-card">
-                <div class="press-hero-media"><img src="/images/press/lbb-reinvention.jpg" alt="LBB Online feature: The Charles Group, sparking growth with reinvention" loading="lazy" onerror="this.parentElement.remove()"></div>
+                <div class="press-hero-media"><img src="/images/press/lbb-reinvention.jpg" alt="LBB Online feature: The Charles Group, sparking growth with reinvention" onerror="this.parentElement.remove()"></div>
                 <div class="press-hero-pub">LBB Online</div>
                 <div class="press-hero-headline">The Charles Group: Sparking Growth with Reinvention</div>
                 <div class="press-hero-meta">
@@ -1779,7 +1807,7 @@
                 </div>
             </a>
             <a href="https://www.founderbrew.com/stories/the-sibling-system-behind-the-charles-groups-15-year-success" target="_blank" rel="noopener" class="press-hero-card">
-                <div class="press-hero-media"><img src="/images/press/founderbrew.jpg" alt="Founder Brew story: The Sibling System Behind The Charles Group's 15-Year Success" loading="lazy" onerror="this.parentElement.remove()"></div>
+                <div class="press-hero-media"><img src="/images/press/founderbrew.jpg" alt="Founder Brew story: The Sibling System Behind The Charles Group's 15-Year Success" onerror="this.parentElement.remove()"></div>
                 <div class="press-hero-pub">Founder Brew</div>
                 <div class="press-hero-headline">The Sibling System Behind The Charles Group's 15-Year Success</div>
                 <div class="press-hero-meta">
@@ -1788,7 +1816,7 @@
                 </div>
             </a>
             <a href="https://www.dandad.org/" target="_blank" rel="noopener" class="press-hero-card">
-                <div class="press-hero-media"><img src="/images/press/cocainenomics.jpg" alt="Cocainenomics — WSJ and Netflix branded editorial campaign by The Charles Group" loading="lazy" onerror="this.parentElement.remove()"></div>
+                <div class="press-hero-media"><img src="/images/press/cocainenomics.jpg" alt="Cocainenomics — WSJ and Netflix branded editorial campaign by The Charles Group" onerror="this.parentElement.remove()"></div>
                 <div class="press-hero-pub">D&AD / Webby Awards</div>
                 <div class="press-hero-headline">Cocainenomics: WSJ × Netflix branded editorial campaign</div>
                 <div class="press-hero-meta">
@@ -1827,7 +1855,13 @@
                     </div>
                 </div>
                 <a href="https://www.ispot.tv/ad/I99Y/2019-jaguar-f-pace-the-new-faces-of-jaguar-t2" target="_blank" rel="noopener" class="press-tv-card">
-                    <div class="tv-still"><img src="/images/press/jaguar-fpace.jpg" alt="Still from the Jaguar F-PACE campaign, The New Faces of Jaguar" loading="lazy" onerror="this.parentElement.remove()"></div>
+                    <div class="tv-still">
+                        <img src="/images/press/jaguar-fpace.jpg" alt="Still from the Jaguar F-PACE campaign, The New Faces of Jaguar" onerror="this.closest('.tv-still').classList.add('is-fallback'); this.remove()">
+                        <div class="tv-still-fallback" aria-hidden="true">
+                            <span class="tv-still-brand">Jaguar F&#8209;PACE</span>
+                            <span class="tv-still-cta">Watch the spot on iSpot.tv &#8599;</span>
+                        </div>
+                    </div>
                     <div class="press-tv-network">Jaguar: National TV Campaign</div>
                     <div class="press-tv-title">F-PACE: The New Faces of Jaguar</div>
                     <div class="press-tv-meta">
