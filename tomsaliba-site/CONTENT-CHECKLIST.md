@@ -4,7 +4,7 @@ The copy is now drawn from Tom's CV (Thomas Alexander Saliba, Merchandising Dire
 
 ## Still needed before launch
 
-- [ ] **Editorial portrait** — drop the photo into this folder as `tom-headshot.jpg` (3:4-friendly, at least 1000px wide) and everything lights up automatically: the hero already points at that filename (with the placeholder as fallback until it exists), and so do the Open Graph/Twitter image tags. No code change needed.
+- [x] **Editorial portrait** — done: `tom-headshot.jpg` (1200×1802 optimized JPEG, 178KB) is in place; the hero and the Open Graph/Twitter image tags all use it.
 - [x] **LinkedIn URL** — done: `https://www.linkedin.com/in/thomas-saliba/` in the contact section, footer, and JSON-LD `sameAs`.
 - [ ] **Confirm the contact email** — currently `saliba_t@hotmail.com` (from the CV), used in the contact link and the form's error message. A `tom@tomsaliba.com` address would look sharper once the domain exists.
 - [ ] **Tom's sign-off on the copy** — especially two things. First, the Track Record numbers (revenue turnaround, Bonmarché growth, DSGN Studio forecast) since they're now public claims. Second, the consultant positioning itself: the site presents Tom as a merchandising consultant offering turnarounds, capability builds, and interim leadership, while his CV shows a current permanent role at Boohoo/Debenhams Group — Tom should confirm he's comfortable advertising consulting services publicly before launch.
