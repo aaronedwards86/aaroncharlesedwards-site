@@ -1,28 +1,23 @@
 # Content checklist for tomsaliba.com
 
-Everything Tom needs to supply, in priority order. Each item has a matching `TODO` comment in `index.html`.
+The copy is now drawn from Tom's CV (Thomas Alexander Saliba, Merchandising Director — 2026). What remains is mostly assets and confirmations. Each open item has a matching `TODO` comment in `index.html`.
 
-## Must have before launch
+## Still needed before launch
 
-- [ ] **Editorial portrait** — 3:4 crop, at least 1000px wide, saved as `tom-headshot.jpg`. Swap the hero `<img src="tom-headshot-placeholder.svg">` to point at it. This is the single highest-impact item on the page.
-- [ ] **Positioning line (H1)** — one confident sentence about the value Tom creates.
-- [ ] **Hero supporting paragraph** — 2–3 sentences: company, tenure, the most impressive facts.
-- [ ] **Credential line** — three roles, e.g. "Founder · Investor · Advisor".
-- [ ] **About: four paragraphs** — founding moment, proof, background, "based in [city]".
-- [ ] **Contact email** — replace `hello@tomsaliba.com` in three places: contact link, form error message, and decide if it's also the Netlify Forms notification address.
-- [ ] **LinkedIn URL** — contact section + footer.
-- [ ] **Page title + meta description** — in `<head>`, once positioning is final (also update the Open Graph and Twitter copies of both).
+- [ ] **Editorial portrait** — 3:4 crop, at least 1000px wide, saved as `tom-headshot.jpg`. Swap the hero `<img src="tom-headshot-placeholder.svg">` to point at it. The Open Graph/Twitter image tags already expect this filename. This is the single highest-impact item on the page.
+- [ ] **LinkedIn URL** — three places: contact section, footer, and a `sameAs` array worth adding to the JSON-LD Person schema in `<head>`.
+- [ ] **Confirm the contact email** — currently `saliba_t@hotmail.com` (from the CV), used in the contact link and the form's error message. A `tom@tomsaliba.com` address would look sharper once the domain exists.
+- [ ] **Tom's sign-off on the copy** — especially the Track Record numbers (revenue turnaround, Bonmarché growth, DSGN Studio forecast) since they're now public claims, and the DSGN Studio card (no public URL was on the CV, so the card isn't linked).
 
-## Should have
+## Optional polish
 
-- [ ] **Client/partner names** for the scrolling strip (8 is ideal; text styling is already handled, or supply SVG logos).
-- [ ] **Ventures cards** — name, one-line label, two-sentence description, and URL for 2–3 ventures. Delete extra cards if fewer.
-- [ ] **Speaking proof points** — four organizations/roles, or delete the Speaking section and its nav link if Tom doesn't speak.
-- [ ] **Personal touches line** — four short phrases under the hero, or delete it.
+- [ ] **Real brand logos** for the scrolling strip (currently styled text wordmarks: boohoo, Debenhams, Bonmarché, Missguided, Topshop, Ivy Park, River Island, ASOS, DSGN Studio). Note: these are employers' marks — text wordmarks avoid any logo-permission questions.
+- [ ] **Featured video** — if Tom has a recorded lecture or panel, enable the hidden video block in the Lecturing section (remove `display:none`).
+- [ ] **Press section** — ships hidden; enable if Tom collects press features or podcast appearances (remove `display:none`, restore the Press nav link).
+- [ ] **Google Search Console** verification tag + sitemap submission after launch.
 
-## Nice to have (sections ship hidden until ready)
+## Deliberately left off the site
 
-- [ ] **Featured video** — YouTube URL + title + event/date (Speaking section, remove `display:none`).
-- [ ] **Press section** — awards, features with links, publication names, podcast appearances (remove `display:none`, restore the Press nav link).
-- [ ] **Google Search Console** verification tag + sitemap submission.
-- [ ] **Expanded JSON-LD** — `jobTitle`, `worksFor`, `sameAs` array with confirmed profiles.
+- Phone number (on the CV, but a public website shouldn't carry it — the form and email cover contact).
+- Street-level address — only "Greater Manchester" appears.
+- Education grades and systems/tools lists — CV material, not personal-brand material.

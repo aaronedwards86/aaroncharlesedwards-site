@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- TODO: Update the title + description once Tom's positioning is final -->
-    <title>Tom Saliba | Founder &amp; Operator</title>
-    <meta name="description" content="The personal site of Tom Saliba — founder, operator, and speaker.">
+    <title>Tom Saliba | Merchandising Director &amp; Omni-Channel Retail Leader</title>
+    <meta name="description" content="Merchandising Director at Boohoo, Debenhams Group. 18 years leading omni-channel retail through transformation — Bonmarché, Missguided, Topshop, River Island, ASOS. Drapers 30 Under 30.">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -22,28 +21,44 @@
     <!-- Open Graph -->
     <!-- TODO: og:image points at tom-headshot.jpg — upload the real portrait with that filename -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Tom Saliba | Founder &amp; Operator">
-    <meta property="og:description" content="The personal site of Tom Saliba — founder, operator, and speaker.">
+    <meta property="og:title" content="Tom Saliba | Merchandising Director &amp; Omni-Channel Retail Leader">
+    <meta property="og:description" content="Merchandising Director at Boohoo, Debenhams Group. 18 years leading omni-channel retail through transformation — Bonmarché, Missguided, Topshop, River Island, ASOS. Drapers 30 Under 30.">
     <meta property="og:url" content="https://tomsaliba.com/">
     <meta property="og:site_name" content="Tom Saliba">
     <meta property="og:image" content="https://tomsaliba.com/tom-headshot.jpg">
-    <meta property="og:locale" content="en_US">
+    <meta property="og:locale" content="en_GB">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Tom Saliba | Founder &amp; Operator">
-    <meta name="twitter:description" content="The personal site of Tom Saliba — founder, operator, and speaker.">
+    <meta name="twitter:title" content="Tom Saliba | Merchandising Director &amp; Omni-Channel Retail Leader">
+    <meta name="twitter:description" content="Merchandising Director at Boohoo, Debenhams Group. 18 years leading omni-channel retail through transformation — Bonmarché, Missguided, Topshop, River Island, ASOS. Drapers 30 Under 30.">
     <meta name="twitter:image" content="https://tomsaliba.com/tom-headshot.jpg">
 
     <!-- JSON-LD Person Schema -->
-    <!-- Kept minimal on purpose. Expand with jobTitle, worksFor, sameAs (LinkedIn etc.)
-         once the real facts are confirmed — see CONTENT-CHECKLIST.md -->
+    <!-- TODO: Add a "sameAs" array with Tom's LinkedIn URL once confirmed -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Tom Saliba",
-        "url": "https://tomsaliba.com"
+        "alternateName": ["Thomas Saliba", "Thomas Alexander Saliba"],
+        "givenName": "Thomas",
+        "familyName": "Saliba",
+        "jobTitle": "Merchandising Director",
+        "description": "Tom Saliba is a Merchandising Director with 18 years' experience leading omni-channel retail businesses through major transformation, including Boohoo (Debenhams Group), Bonmarché, Missguided, Topshop, River Island, and ASOS. Drapers 30 Under 30, Class of 2015.",
+        "image": "https://tomsaliba.com/tom-headshot.jpg",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Boohoo, Debenhams Group"
+        },
+        "url": "https://tomsaliba.com",
+        "alumniOf": [
+            {"@type": "CollegeOrUniversity", "name": "University of Manchester"}
+        ],
+        "knowsAbout": ["Merchandising", "Omni-channel retail", "Inventory management", "Trading strategy", "Pricing architecture", "Supply chain", "DTC", "Marketplace", "Wholesale"],
+        "award": ["Drapers 30 Under 30, Class of 2015"],
+        "nationality": "British",
+        "address": {"@type": "PostalAddress", "addressLocality": "Altrincham", "addressRegion": "Greater Manchester", "addressCountry": "GB"}
     }
     </script>
 
@@ -1006,9 +1021,10 @@
         <div class="nav-name">Tom Saliba</div>
         <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
         <ul class="nav-links">
-            <li><a href="/" onclick="event.preventDefault(); document.getElementById('expertise').scrollIntoView({behavior:'smooth'});">Ventures</a></li>
+            <li><a href="/" onclick="event.preventDefault(); document.getElementById('experience').scrollIntoView({behavior:'smooth'});">Experience</a></li>
+            <li><a href="/" onclick="event.preventDefault(); document.getElementById('highlights').scrollIntoView({behavior:'smooth'});">Track Record</a></li>
             <li><a href="/" onclick="event.preventDefault(); document.getElementById('about').scrollIntoView({behavior:'smooth'});">About</a></li>
-            <li><a href="/" onclick="event.preventDefault(); document.getElementById('speaking').scrollIntoView({behavior:'smooth'});">Speaking</a></li>
+            <li><a href="/" onclick="event.preventDefault(); document.getElementById('speaking').scrollIntoView({behavior:'smooth'});">Lecturing</a></li>
             <!-- Press nav link. Restore this once the Press section below is enabled:
             <li><a href="/" onclick="event.preventDefault(); document.getElementById('press').scrollIntoView({behavior:'smooth'});">Press</a></li>
             -->
@@ -1023,86 +1039,121 @@
         <header class="hero">
             <img src="tom-headshot-placeholder.svg" alt="Tom Saliba" class="hero-photo">
             <div class="hero-text">
-                <!-- TODO: Swap for Tom's real roles, e.g. "Founder · Investor · Advisor" -->
-                <div class="hero-credential">Founder · Operator · Speaker</div>
-                <!-- TODO: One sentence of positioning. What Tom does, stated with confidence. -->
-                <h1>A single clear sentence about the value Tom creates.</h1>
-                <!-- TODO: Two or three sentences of proof: what he's built, who he serves,
-                     and the results that make people pay attention. -->
-                <p class="hero-sub">This is the supporting paragraph. Name the company Tom founded or leads, how long he has been doing it, and the two or three most impressive facts a stranger should know within ten seconds of landing here.</p>
-                <!-- TODO: Four short personal touches, or delete this line entirely. -->
-                <div class="hero-personal">Family man. Traveler. Builder. Lifelong learner.</div>
+                <div class="hero-credential">Merchandising Director · Retail Leader · Guest Lecturer</div>
+                <h1>Merchandising that moves the P&amp;L.</h1>
+                <p class="hero-sub">Merchandising Director at Boohoo, Debenhams Group. Eighteen years leading omni-channel retail businesses through major transformation — turning around underperforming P&amp;Ls, building high-performing teams, and driving sustainable revenue and margin growth across DTC, marketplace, and wholesale. Drapers 30 Under 30.</p>
+                <div class="hero-personal">Rugby international. Golfer. Based in Greater Manchester.</div>
             </div>
         </header>
     </div>
 
-    <!-- Client Logos -->
-    <!-- These are styled text placeholders. Replace each with a real client or partner name,
-         or swap to image logos with: <span class="logo-item"><img src="logos/name.svg" alt="Name"></span>
+    <!-- Brand Strip -->
+    <!-- Styled text wordmarks. To swap any for a real logo file:
+         <span class="logo-item"><img src="logos/name.svg" alt="Name"></span>
          Keep the full list duplicated once so the loop scrolls seamlessly. -->
     <div class="clients">
-        <div class="clients-label">Trusted by leading brands</div>
+        <div class="clients-label">Eighteen years across retail's biggest names</div>
         <div class="logo-strip-wrapper">
             <div class="logo-strip">
-                <span class="logo-item"><span class="logo-text serif">Client One</span></span>
-                <span class="logo-item"><span class="logo-text sans">Client Two</span></span>
-                <span class="logo-item"><span class="logo-text light">Client Three</span></span>
-                <span class="logo-item"><span class="logo-text serif">Client Four</span></span>
-                <span class="logo-item"><span class="logo-text bold">Client Five</span></span>
-                <span class="logo-item"><span class="logo-text sans">Client Six</span></span>
-                <span class="logo-item"><span class="logo-text serif">Client Seven</span></span>
-                <span class="logo-item"><span class="logo-text light">Client Eight</span></span>
+                <span class="logo-item"><span class="logo-text sans">boohoo</span></span>
+                <span class="logo-item"><span class="logo-text serif">Debenhams</span></span>
+                <span class="logo-item"><span class="logo-text light">Bonmarché</span></span>
+                <span class="logo-item"><span class="logo-text sans">Missguided</span></span>
+                <span class="logo-item"><span class="logo-text bold">Topshop</span></span>
+                <span class="logo-item"><span class="logo-text serif">Ivy Park</span></span>
+                <span class="logo-item"><span class="logo-text light">River Island</span></span>
+                <span class="logo-item"><span class="logo-text bold">ASOS</span></span>
+                <span class="logo-item"><span class="logo-text sans">DSGN Studio</span></span>
                 <!-- duplicate for seamless loop -->
-                <span class="logo-item"><span class="logo-text serif">Client One</span></span>
-                <span class="logo-item"><span class="logo-text sans">Client Two</span></span>
-                <span class="logo-item"><span class="logo-text light">Client Three</span></span>
-                <span class="logo-item"><span class="logo-text serif">Client Four</span></span>
-                <span class="logo-item"><span class="logo-text bold">Client Five</span></span>
-                <span class="logo-item"><span class="logo-text sans">Client Six</span></span>
-                <span class="logo-item"><span class="logo-text serif">Client Seven</span></span>
-                <span class="logo-item"><span class="logo-text light">Client Eight</span></span>
+                <span class="logo-item"><span class="logo-text sans">boohoo</span></span>
+                <span class="logo-item"><span class="logo-text serif">Debenhams</span></span>
+                <span class="logo-item"><span class="logo-text light">Bonmarché</span></span>
+                <span class="logo-item"><span class="logo-text sans">Missguided</span></span>
+                <span class="logo-item"><span class="logo-text bold">Topshop</span></span>
+                <span class="logo-item"><span class="logo-text serif">Ivy Park</span></span>
+                <span class="logo-item"><span class="logo-text light">River Island</span></span>
+                <span class="logo-item"><span class="logo-text bold">ASOS</span></span>
+                <span class="logo-item"><span class="logo-text sans">DSGN Studio</span></span>
             </div>
         </div>
     </div>
 
     <hr class="section-divider">
 
-    <!-- Ventures -->
-    <section id="expertise" class="fade-in">
-        <div class="section-label">Ventures</div>
-        <h2 class="section-title">What I'm building.</h2>
+    <!-- Experience -->
+    <section id="experience" class="fade-in">
+        <div class="section-label">Experience</div>
+        <h2 class="section-title">Where I lead.</h2>
         <div class="expertise-grid">
-            <!-- TODO: One card per venture. Set the real name, link, and a two-sentence
-                 description. Delete cards that don't apply — two cards also looks good. -->
-            <a class="expertise-card card-one" href="#" onclick="event.preventDefault()">
+            <a class="expertise-card card-one" href="https://www.boohoo.com" target="_blank">
                 <div class="card-bg"></div>
                 <div class="card-overlay"></div>
                 <span class="card-arrow">↗</span>
                 <div class="card-content">
-                    <div class="card-label">Primary Venture</div>
-                    <div class="card-logo">Company One</div>
-                    <p>Two sentences about Tom's main company: what it does, who it serves, and the proof point that makes it credible.</p>
+                    <div class="card-label">Current · Merchandising Director</div>
+                    <div class="card-logo">Boohoo, Debenhams Group</div>
+                    <p>Owns total business sales, profit, and inventory strategy across DTC, marketplace, and wholesale, leading a team of 24. Guided revenue from &#8722;47% YoY to &#8722;6% in one year by redesigning the product critical path.</p>
                 </div>
             </a>
-            <a class="expertise-card card-two" href="#" onclick="event.preventDefault()">
+            <a class="expertise-card card-two" href="https://www.bonmarche.co.uk" target="_blank">
                 <div class="card-bg"></div>
                 <div class="card-overlay"></div>
                 <span class="card-arrow">↗</span>
                 <div class="card-content">
-                    <div class="card-label">Second Venture</div>
-                    <div class="card-logo">Company Two</div>
-                    <p>Two sentences about a second venture, investment activity, board role, or advisory practice.</p>
+                    <div class="card-label">2022–2025 · Merchandise Director</div>
+                    <div class="card-logo">Bonmarché</div>
+                    <p>Owned sales, profit, and inventory strategy reporting to the CEO. Delivered +18% revenue and +21% margin growth YoY across 225 stores, ecommerce, and three fulfilment centres.</p>
                 </div>
             </a>
             <a class="expertise-card card-three" href="#" onclick="event.preventDefault()">
                 <div class="card-bg"></div>
                 <div class="card-overlay"></div>
                 <div class="card-content">
-                    <div class="card-label">Coming Soon</div>
-                    <div class="card-logo">New Venture <span class="beta-badge">Beta</span></div>
-                    <p>Something new is in the works. Details coming soon.</p>
+                    <div class="card-label">Brand Build</div>
+                    <div class="card-logo">DSGN Studio</div>
+                    <p>Led the stakeholder steer group that grew DSGN Studio into an independent lifestyle brand, now trading in its own right and forecast to reach ~£30m revenue in FY25/26.</p>
                 </div>
             </a>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- Track Record -->
+    <section id="highlights" class="fade-in">
+        <div class="section-label">Track Record</div>
+        <h2 class="section-title">The numbers behind the career.</h2>
+        <div class="awards-grid">
+            <div class="award-item">
+                <span class="award-mark"></span>
+                <div class="award-name">&#8722;47% &#8594; &#8722;6%</div>
+                <div class="award-detail">Year-one revenue turnaround at Boohoo, Debenhams Group</div>
+                <span class="award-stat">2025–26</span>
+            </div>
+            <div class="award-item">
+                <span class="award-mark"></span>
+                <div class="award-name">+18% / +21%</div>
+                <div class="award-detail">Revenue &amp; margin growth YoY at Bonmarché</div>
+                <span class="award-stat">FY24/25</span>
+            </div>
+            <div class="award-item">
+                <span class="award-mark"></span>
+                <div class="award-name">~£30m</div>
+                <div class="award-detail">DSGN Studio forecast revenue as an independent brand</div>
+                <span class="award-stat">FY25/26</span>
+            </div>
+            <div class="award-item">
+                <span class="award-mark"></span>
+                <div class="award-name">30 Under 30</div>
+                <div class="award-detail">Drapers Next Generation</div>
+                <span class="award-stat">Class of 2015</span>
+            </div>
+            <div class="award-item">
+                <span class="award-mark"></span>
+                <div class="award-name">Teams of 24</div>
+                <div class="award-detail">Coaching Heads of Merchandising into senior leadership</div>
+                <span class="award-stat">People First</span>
+            </div>
         </div>
     </section>
 
@@ -1114,11 +1165,10 @@
         <h2 class="section-title">The story</h2>
         <div class="about-grid">
             <div class="about-content">
-                <!-- TODO: Four short paragraphs. Opening lede renders larger automatically. -->
-                <p>Open with the founding moment: when Tom started his company, and the conviction that drove it. One or two sentences, stated plainly.</p>
-                <p>The second paragraph is the proof. Name the clients, the growth, the milestones — whatever demonstrates that the conviction paid off. This is the paragraph that earns trust.</p>
-                <p>The third paragraph is the background: what Tom did before, and the perspective that experience gives him now. This is where a differentiated point of view lives.</p>
-                <p>He is based in New York.</p>
+                <p>Tom Saliba is a commercially driven Merchandising Director with eighteen years' experience leading omni-channel retail businesses through periods of major transformation.</p>
+                <p>His career runs through some of British retail's most recognisable names. He learned the trade at ASOS and River Island, ran Brands &amp; Ivy Park as a Senior Merchandiser at Topshop, then led Mid &amp; Long lead-time merchandising at Missguided — around 45% of the company's product revenue. As Merchandise Director at Bonmarché he delivered +18% revenue and +21% margin growth in a single year across 225 stores, ecommerce, and three fulfilment centres. Today, as Merchandising Director at Boohoo, Debenhams Group, he owns total business sales, profit, and inventory strategy across DTC, marketplace, and wholesale — and guided the business from a &#8722;47% year-on-year revenue decline to &#8722;6% within a year.</p>
+                <p>What sets Tom apart is the combination: sharp commercial judgement with genuine people leadership. He has led teams of up to 24 and coached multiple Heads of Merchandising and Senior Merchandisers into senior leadership roles, and his grounding in International Business, Finance &amp; Economics at the University of Manchester means he speaks the language of the P&amp;L as fluently as the language of product. Drapers named him one of the industry's "30 Under 30" in 2015.</p>
+                <p>He is based in Greater Manchester. Away from the trade floor he has fifteen international rugby caps for Lebanon and a golf handicap he describes as his retirement plan.</p>
             </div>
         </div>
     </section>
@@ -1127,30 +1177,27 @@
 
     <!-- Speaking -->
     <section id="speaking" class="fade-in">
-        <div class="section-label">Speaking</div>
-        <h2 class="section-title">Keynotes, panels &amp; guest lectures</h2>
-        <!-- TODO: One sentence listing the formats and topics Tom actually speaks on.
-             If Tom doesn't do speaking, delete this whole section plus its nav link. -->
-        <p style="color: var(--text-secondary); max-width: 640px; margin-bottom: 48px; font-size: 17px; line-height: 1.8;">Tom Saliba is available for keynotes, executive workshops, panels, and guest lectures on the topics where he has real authority.</p>
+        <div class="section-label">Lecturing &amp; Mentoring</div>
+        <h2 class="section-title">Guest lectures, panels &amp; coaching</h2>
+        <p style="color: var(--text-secondary); max-width: 640px; margin-bottom: 48px; font-size: 17px; line-height: 1.8;">Tom is available for guest lectures, panels, and mentoring on merchandising, omni-channel trading, and building a career in retail — drawing on eighteen years from merchandising assistant to the director's chair.</p>
 
         <!-- Speaking Engagements -->
-        <!-- TODO: Four proof points: places Tom has spoken, taught, or advised. -->
         <div class="speaking-engagements">
             <div class="speaking-eng-item">
-                <div class="speaking-eng-org">Organization One</div>
-                <div class="speaking-eng-role">Keynote or role</div>
+                <div class="speaking-eng-org">Manchester Metropolitan University</div>
+                <div class="speaking-eng-role">Guest Lecturer: Undergraduate &amp; Masters Fashion</div>
             </div>
             <div class="speaking-eng-item">
-                <div class="speaking-eng-org">Organization Two</div>
-                <div class="speaking-eng-role">Guest lecturer</div>
+                <div class="speaking-eng-org">Drapers</div>
+                <div class="speaking-eng-role">30 Under 30 Next Generation, Class of 2015</div>
             </div>
             <div class="speaking-eng-item">
-                <div class="speaking-eng-org">Organization Three</div>
-                <div class="speaking-eng-role">Panelist</div>
+                <div class="speaking-eng-org">Executive Boardrooms</div>
+                <div class="speaking-eng-role">Weekly trade presentations to CEOs &amp; Exec boards</div>
             </div>
             <div class="speaking-eng-item">
-                <div class="speaking-eng-org">Organization Four</div>
-                <div class="speaking-eng-role">Advisory board</div>
+                <div class="speaking-eng-org">Team Development</div>
+                <div class="speaking-eng-role">Coached Heads of Merchandising into leadership</div>
             </div>
         </div>
 
@@ -1255,13 +1302,14 @@
         <h2 class="section-title">Let's talk</h2>
         <div class="contact-grid">
             <div class="contact-info">
-                <h3>Speaking inquiries, press, and business.</h3>
-                <p>For bookings, media requests, or professional inquiries, reach out directly.</p>
-                <!-- TODO: Set the real LinkedIn URL and email address (also in the form
-                     error message inside the script below). -->
+                <h3>Opportunities, lecturing, and everything else.</h3>
+                <p>For senior merchandising leadership conversations, guest lecture bookings, mentoring, or professional inquiries, reach out directly.</p>
+                <!-- TODO: Set the real LinkedIn URL. Email comes from Tom's CV — swap to a
+                     tomsaliba.com address later if he sets one up (also in the form error
+                     message inside the script below). -->
                 <div class="contact-links">
                     <a href="https://www.linkedin.com/" target="_blank">LinkedIn ↗</a>
-                    <a href="mailto:hello@tomsaliba.com">Email ↗</a>
+                    <a href="mailto:saliba_t@hotmail.com">Email ↗</a>
                 </div>
             </div>
             <!-- Works automatically once the site is hosted on Netlify (data-netlify).
@@ -1281,9 +1329,9 @@
                     <label>Subject</label>
                     <select name="subject" required>
                         <option value="" disabled selected>Select a topic</option>
-                        <option value="speaking">Speaking Inquiry</option>
-                        <option value="press">Press</option>
-                        <option value="business">Business</option>
+                        <option value="opportunity">Leadership Opportunity</option>
+                        <option value="lecturing">Lecturing &amp; Speaking</option>
+                        <option value="mentoring">Mentoring</option>
                         <option value="general">General</option>
                     </select>
                 </div>
@@ -1321,7 +1369,7 @@
                         status.style.display = 'block';
                         status.style.background = '#fef2f2';
                         status.style.color = '#dc2626';
-                        status.textContent = 'Something went wrong. Please email hello@tomsaliba.com directly.';
+                        status.textContent = 'Something went wrong. Please email saliba_t@hotmail.com directly.';
                     }
                     btn.disabled = false;
                     btn.textContent = 'Send Message';

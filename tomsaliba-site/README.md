@@ -51,18 +51,16 @@ The form is already wired for **Netlify Forms** (`data-netlify="true"`). After t
 
 If the site is ever hosted somewhere other than Netlify, swap the form for a [Formspree](https://formspree.io) endpoint instead.
 
-### 5. Replace the placeholder content
+### 5. Finish the content
 
-Work through `CONTENT-CHECKLIST.md` — every placeholder is also marked with a `TODO` comment in `index.html`. The big ones:
+The copy is drawn from Tom's 2026 CV — hero, experience cards, track-record numbers, about story, and lecturing credentials are all real. What remains is in `CONTENT-CHECKLIST.md`, chiefly:
 
-- **Portrait** — a real editorial photo saved as `tom-headshot.jpg` (3:4 crop, ≥1000px wide), then update the `<img src>` in the hero and keep the OG image path in the `<head>` as is.
-- **Hero copy** — positioning line and proof paragraph.
-- **Client strip** — real client names (or SVG logos in a `logos/` folder).
-- **Ventures cards** — real companies with real links.
-- **About** — four short paragraphs.
-- **Contact** — real email + LinkedIn URLs (three places: contact links, form error message in the script, footer).
+- **Portrait** — a real editorial photo saved as `tom-headshot.jpg` (3:4 crop, ≥1000px wide), then update the hero `<img src>`; the OG image path in `<head>` already expects that filename.
+- **LinkedIn URL** — contact section, footer, and JSON-LD `sameAs`.
+- **Email confirmation** — currently the CV's `saliba_t@hotmail.com`.
+- **Tom's sign-off** on the published numbers.
 
-Two sections ship **hidden** until there's real content for them (search `display:none` in `index.html`): the featured video in Speaking, and the entire Press section.
+Two sections ship **hidden** until there's real content for them (search `display:none` in `index.html`): the featured video in Lecturing, and the entire Press section.
 
 ### 6. Post-launch polish
 
