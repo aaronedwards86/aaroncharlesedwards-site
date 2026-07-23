@@ -1032,11 +1032,12 @@
     </nav>
 
     <!-- Hero -->
-    <!-- TODO: Replace tom-headshot-placeholder.svg with a real editorial portrait saved
-         as tom-headshot.jpg (3:4 crop, at least 1000px wide) and update the src below. -->
+    <!-- The hero loads tom-headshot.jpg and falls back to the placeholder until that file
+         exists. To finish: add Tom's portrait (3:4-friendly, at least 1000px wide) to this
+         folder as tom-headshot.jpg — no code change needed. -->
     <div class="hero-wrapper">
         <header class="hero">
-            <img src="tom-headshot-placeholder.svg" alt="Tom Saliba" class="hero-photo">
+            <img src="tom-headshot.jpg" onerror="this.onerror=null; this.src='tom-headshot-placeholder.svg'" alt="Tom Saliba" class="hero-photo">
             <div class="hero-text">
                 <div class="hero-credential">Merchandising Consultant · P&amp;L Turnarounds · Interim Leadership</div>
                 <h1>Merchandising that moves the P&amp;L.</h1>
