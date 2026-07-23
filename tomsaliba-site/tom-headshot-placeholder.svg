@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1200" viewBox="0 0 900 1200">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1a1a2e"/>
+      <stop offset="0.5" stop-color="#16213e"/>
+      <stop offset="1" stop-color="#0f3460"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1200" fill="url(#bg)"/>
+  <text x="450" y="590" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="220" letter-spacing="18" fill="#ffffff" opacity="0.92">TS</text>
+  <rect x="430" y="660" width="40" height="2" fill="#ffffff" opacity="0.35"/>
+  <text x="450" y="730" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="22" letter-spacing="6" fill="#ffffff" opacity="0.5">TOM SALIBA</text>
+  <text x="450" y="1140" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="16" letter-spacing="3" fill="#ffffff" opacity="0.35">REPLACE WITH PORTRAIT · tom-headshot.jpg</text>
+</svg>
