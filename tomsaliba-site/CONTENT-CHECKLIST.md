@@ -7,7 +7,7 @@ The copy is now drawn from Tom's CV (Thomas Alexander Saliba, Merchandising Dire
 - [ ] **Editorial portrait** — 3:4 crop, at least 1000px wide, saved as `tom-headshot.jpg`. Swap the hero `<img src="tom-headshot-placeholder.svg">` to point at it. The Open Graph/Twitter image tags already expect this filename. This is the single highest-impact item on the page.
 - [ ] **LinkedIn URL** — three places: contact section, footer, and a `sameAs` array worth adding to the JSON-LD Person schema in `<head>`.
 - [ ] **Confirm the contact email** — currently `saliba_t@hotmail.com` (from the CV), used in the contact link and the form's error message. A `tom@tomsaliba.com` address would look sharper once the domain exists.
-- [ ] **Tom's sign-off on the copy** — especially the Track Record numbers (revenue turnaround, Bonmarché growth, DSGN Studio forecast) since they're now public claims, and the DSGN Studio card (no public URL was on the CV, so the card isn't linked).
+- [ ] **Tom's sign-off on the copy** — especially two things. First, the Track Record numbers (revenue turnaround, Bonmarché growth, DSGN Studio forecast) since they're now public claims. Second, the consultant positioning itself: the site presents Tom as a merchandising consultant offering turnarounds, capability builds, and interim leadership, while his CV shows a current permanent role at Boohoo/Debenhams Group — Tom should confirm he's comfortable advertising consulting services publicly before launch.
 
 ## Optional polish
 
