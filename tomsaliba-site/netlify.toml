@@ -1,0 +1,9 @@
+# Netlify configuration for tomsaliba.com
+# Static site — no build command needed
+
+[build]
+  publish = "."
+
+# Enable branch deploy previews
+[context.deploy-preview]
+  publish = "."
